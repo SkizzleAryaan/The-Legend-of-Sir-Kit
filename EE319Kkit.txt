@@ -1,0 +1,18 @@
+ECE319K Spring 2023
+TAs hand out one bag to each student during the board demo.
+Extra bags should be put into the Cabinet.
+
+Qty  Item   
+1    plastic bag                 
+2    Green  LED 1.7V 2mA 5mm, Broadcom, HLMP-4740, Mouser 630-HLMP-4740
+2    Red    LED 1.8V 2mA 5mm, Broadcom, HLMP-4700, Mouser 630-HLMP-4700
+2    Yellow LED 1.9V 2mA 5mm, Broadcom, HLMP-4719, Mouser 630-HLMP-4719
+6    Resistor, 1/4W 5%, 470 ohm,  Digikey 470QBK-ND
+4    Resistor, 1/4W 5%, 10K ohm,  Digikey 10KQBK-ND        
+5    Resistor, 1/4W 5%, 12K ohm,  Digikey 12KQBK-ND        
+5    Resistor, 1/4W 5%, 1.5K ohm, Digikey 1.5KQBK-ND       
+4    B3F tactile switch, Omron B3F-1052, Digikey SW405-ND    
+1    Slide potentiometer Bourns PTA2043-2015CPB103 Mouser 652-PTA20432015CPB10
+1    150-ohm 20-mm speaker https://www.allelectronics.com sk-215  
+ECE319K students buy their own protoboard, wires, and ST7735R. The speaker will require two solder joints
+

@@ -1,0 +1,1146 @@
+Component: Arm Compiler for Embedded 6.19 Tool: armlink [5e73cb00]
+
+==============================================================================
+
+Section Cross References
+
+    startup.o(RESET) refers to startup.o(STACK) for StackMem
+    startup.o(RESET) refers to timer3a.o(i.Timer3A_Handler) for Timer3A_Handler
+    startup.o(RESET) refers to lab7grader.o(.text.Timer5A_Handler) for Timer5A_Handler
+    startup.o(RESET) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    lab7main.o(.text.main) refers to pll.o(.text.PLL_Init) for PLL_Init
+    lab7main.o(.text.main) refers to lab7grader.o(.text.TExaS_Init) for TExaS_Init
+    lab7main.o(.text.main) refers to st7735.o(.text.ST7735_InitR) for ST7735_InitR
+    lab7main.o(.text.main) refers to st7735.o(.text.ST7735_OutString) for ST7735_OutString
+    lab7main.o(.text.main) refers to io.o(.text.IO_Init) for IO_Init
+    lab7main.o(.text.main) refers to io.o(.text.IO_Touch) for IO_Touch
+    lab7main.o(.text.main) refers to lab7main.o(.rodata..L__const.main.flowers) for .L__const.main.flowers
+    lab7main.o(.text.main) refers to memcpya.o(.text) for __aeabi_memcpy4
+    lab7main.o(.text.main) refers to st7735.o(.text.ST7735_FillScreen) for ST7735_FillScreen
+    lab7main.o(.text.main) refers to st7735.o(.text.ST7735_DrawBitmap) for ST7735_DrawBitmap
+    lab7main.o(.text.main) refers to lab7main.o(.rodata.Logo) for Logo
+    lab7main.o(.text.main) refers to lab7main.o(.rodata.TestData) for TestData
+    lab7main.o(.text.main) refers to io.o(.text.IO_HeartBeat) for IO_HeartBeat
+    lab7main.o(.text.main) refers to st7735.o(.text.ST7735_SetCursor) for ST7735_SetCursor
+    lab7main.o(.text.main) refers to st7735.o(.text.ST7735_OutUDec) for ST7735_OutUDec
+    lab7main.o(.text.main) refers to st7735.o(.text.ST7735_OutFix) for ST7735_OutFix
+    lab7main.o(.ARM.exidx.text.main) refers to lab7main.o(.text.main) for [Anonymous Symbol]
+    io.o(.ARM.exidx.text.IO_Init) refers to io.o(.text.IO_Init) for [Anonymous Symbol]
+    io.o(.ARM.exidx.text.IO_HeartBeat) refers to io.o(.text.IO_HeartBeat) for [Anonymous Symbol]
+    io.o(.ARM.exidx.text.IO_Touch) refers to io.o(.text.IO_Touch) for [Anonymous Symbol]
+    io.o(.ARM.exidx.text.Wait10ms) refers to io.o(.text.Wait10ms) for [Anonymous Symbol]
+    st7735.o(.text.writecommand) refers to busywait.o(.text) for SPIOutCommand
+    st7735.o(.ARM.exidx.text.writecommand) refers to st7735.o(.text.writecommand) for [Anonymous Symbol]
+    st7735.o(.text.writedata) refers to busywait.o(.text) for SPIOutData
+    st7735.o(.ARM.exidx.text.writedata) refers to st7735.o(.text.writedata) for [Anonymous Symbol]
+    st7735.o(.ARM.exidx.text.Delay1ms) refers to st7735.o(.text.Delay1ms) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_InitB) refers to st7735.o(.rodata.Bcmd) for Bcmd
+    st7735.o(.text.ST7735_InitB) refers to st7735.o(.text.commonInit) for commonInit
+    st7735.o(.text.ST7735_InitB) refers to st7735.o(.data.StTextColor) for StTextColor
+    st7735.o(.text.ST7735_InitB) refers to st7735.o(.bss._width) for _width
+    st7735.o(.text.ST7735_InitB) refers to st7735.o(.bss.StX) for StX
+    st7735.o(.text.ST7735_InitB) refers to st7735.o(.bss._height) for _height
+    st7735.o(.text.ST7735_InitB) refers to st7735.o(.bss.StY) for StY
+    st7735.o(.text.ST7735_InitB) refers to st7735.o(.text.ST7735_FillRect) for ST7735_FillRect
+    st7735.o(.ARM.exidx.text.ST7735_InitB) refers to st7735.o(.text.ST7735_InitB) for [Anonymous Symbol]
+    st7735.o(.text.commonInit) refers to st7735.o(.bss.RowStart) for RowStart
+    st7735.o(.text.commonInit) refers to st7735.o(.bss.ColStart) for ColStart
+    st7735.o(.text.commonInit) refers to st7735.o(.text.commandList) for commandList
+    st7735.o(.ARM.exidx.text.commonInit) refers to st7735.o(.text.commonInit) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_SetCursor) refers to st7735.o(.bss.StX) for StX
+    st7735.o(.text.ST7735_SetCursor) refers to st7735.o(.bss.StY) for StY
+    st7735.o(.ARM.exidx.text.ST7735_SetCursor) refers to st7735.o(.text.ST7735_SetCursor) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_FillScreen) refers to st7735.o(.bss._width) for _width
+    st7735.o(.text.ST7735_FillScreen) refers to st7735.o(.bss._height) for _height
+    st7735.o(.text.ST7735_FillScreen) refers to st7735.o(.text.ST7735_FillRect) for ST7735_FillRect
+    st7735.o(.ARM.exidx.text.ST7735_FillScreen) refers to st7735.o(.text.ST7735_FillScreen) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_InitR) refers to st7735.o(.rodata.Rcmd1) for Rcmd1
+    st7735.o(.text.ST7735_InitR) refers to st7735.o(.text.commonInit) for commonInit
+    st7735.o(.text.ST7735_InitR) refers to st7735.o(.rodata.Rcmd2green) for Rcmd2green
+    st7735.o(.text.ST7735_InitR) refers to st7735.o(.text.commandList) for commandList
+    st7735.o(.text.ST7735_InitR) refers to st7735.o(.bss.ColStart) for ColStart
+    st7735.o(.text.ST7735_InitR) refers to st7735.o(.bss.RowStart) for RowStart
+    st7735.o(.text.ST7735_InitR) refers to st7735.o(.rodata.Rcmd2red) for Rcmd2red
+    st7735.o(.text.ST7735_InitR) refers to st7735.o(.rodata.Rcmd3) for Rcmd3
+    st7735.o(.text.ST7735_InitR) refers to busywait.o(.text) for SPIOutCommand
+    st7735.o(.text.ST7735_InitR) refers to st7735.o(.bss.TabColor) for TabColor
+    st7735.o(.text.ST7735_InitR) refers to st7735.o(.data.StTextColor) for StTextColor
+    st7735.o(.text.ST7735_InitR) refers to st7735.o(.bss.StX) for StX
+    st7735.o(.text.ST7735_InitR) refers to st7735.o(.bss._width) for _width
+    st7735.o(.text.ST7735_InitR) refers to st7735.o(.bss._height) for _height
+    st7735.o(.text.ST7735_InitR) refers to st7735.o(.bss.StY) for StY
+    st7735.o(.text.ST7735_InitR) refers to st7735.o(.text.ST7735_FillRect) for ST7735_FillRect
+    st7735.o(.ARM.exidx.text.ST7735_InitR) refers to st7735.o(.text.ST7735_InitR) for [Anonymous Symbol]
+    st7735.o(.text.commandList) refers to busywait.o(.text) for SPIOutCommand
+    st7735.o(.ARM.exidx.text.commandList) refers to st7735.o(.text.commandList) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_DrawPixel) refers to st7735.o(.bss._width) for _width
+    st7735.o(.text.ST7735_DrawPixel) refers to st7735.o(.bss._height) for _height
+    st7735.o(.text.ST7735_DrawPixel) refers to st7735.o(.text.setAddrWindow) for setAddrWindow
+    st7735.o(.text.ST7735_DrawPixel) refers to busywait.o(.text) for SPIOutData
+    st7735.o(.ARM.exidx.text.ST7735_DrawPixel) refers to st7735.o(.text.ST7735_DrawPixel) for [Anonymous Symbol]
+    st7735.o(.text.setAddrWindow) refers to busywait.o(.text) for SPIOutCommand
+    st7735.o(.text.setAddrWindow) refers to st7735.o(.bss.ColStart) for ColStart
+    st7735.o(.text.setAddrWindow) refers to st7735.o(.bss.RowStart) for RowStart
+    st7735.o(.ARM.exidx.text.setAddrWindow) refers to st7735.o(.text.setAddrWindow) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_DrawFastVLine) refers to st7735.o(.bss._width) for _width
+    st7735.o(.text.ST7735_DrawFastVLine) refers to st7735.o(.bss._height) for _height
+    st7735.o(.text.ST7735_DrawFastVLine) refers to st7735.o(.text.setAddrWindow) for setAddrWindow
+    st7735.o(.text.ST7735_DrawFastVLine) refers to busywait.o(.text) for SPIOutData
+    st7735.o(.ARM.exidx.text.ST7735_DrawFastVLine) refers to st7735.o(.text.ST7735_DrawFastVLine) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_DrawFastHLine) refers to st7735.o(.bss._width) for _width
+    st7735.o(.text.ST7735_DrawFastHLine) refers to st7735.o(.bss._height) for _height
+    st7735.o(.text.ST7735_DrawFastHLine) refers to st7735.o(.text.setAddrWindow) for setAddrWindow
+    st7735.o(.text.ST7735_DrawFastHLine) refers to busywait.o(.text) for SPIOutData
+    st7735.o(.ARM.exidx.text.ST7735_DrawFastHLine) refers to st7735.o(.text.ST7735_DrawFastHLine) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_FillRect) refers to st7735.o(.bss._width) for _width
+    st7735.o(.text.ST7735_FillRect) refers to st7735.o(.bss._height) for _height
+    st7735.o(.text.ST7735_FillRect) refers to st7735.o(.text.setAddrWindow) for setAddrWindow
+    st7735.o(.text.ST7735_FillRect) refers to busywait.o(.text) for SPIOutData
+    st7735.o(.ARM.exidx.text.ST7735_FillRect) refers to st7735.o(.text.ST7735_FillRect) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_DrawSmallCircle) refers to st7735.o(.bss._width) for _width
+    st7735.o(.text.ST7735_DrawSmallCircle) refers to st7735.o(.bss._height) for _height
+    st7735.o(.text.ST7735_DrawSmallCircle) refers to st7735.o(.rodata.smallCircle) for smallCircle
+    st7735.o(.text.ST7735_DrawSmallCircle) refers to st7735.o(.text.setAddrWindow) for setAddrWindow
+    st7735.o(.text.ST7735_DrawSmallCircle) refers to busywait.o(.text) for SPIOutData
+    st7735.o(.ARM.exidx.text.ST7735_DrawSmallCircle) refers to st7735.o(.text.ST7735_DrawSmallCircle) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_DrawCircle) refers to st7735.o(.bss._width) for _width
+    st7735.o(.text.ST7735_DrawCircle) refers to st7735.o(.bss._height) for _height
+    st7735.o(.text.ST7735_DrawCircle) refers to st7735.o(.rodata.circle) for circle
+    st7735.o(.text.ST7735_DrawCircle) refers to st7735.o(.text.setAddrWindow) for setAddrWindow
+    st7735.o(.text.ST7735_DrawCircle) refers to busywait.o(.text) for SPIOutData
+    st7735.o(.ARM.exidx.text.ST7735_DrawCircle) refers to st7735.o(.text.ST7735_DrawCircle) for [Anonymous Symbol]
+    st7735.o(.ARM.exidx.text.ST7735_Color565) refers to st7735.o(.text.ST7735_Color565) for [Anonymous Symbol]
+    st7735.o(.ARM.exidx.text.ST7735_SwapColor) refers to st7735.o(.text.ST7735_SwapColor) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_DrawBitmap) refers to st7735.o(.bss._width) for _width
+    st7735.o(.text.ST7735_DrawBitmap) refers to st7735.o(.bss._height) for _height
+    st7735.o(.text.ST7735_DrawBitmap) refers to st7735.o(.text.setAddrWindow) for setAddrWindow
+    st7735.o(.text.ST7735_DrawBitmap) refers to busywait.o(.text) for SPIOutData
+    st7735.o(.ARM.exidx.text.ST7735_DrawBitmap) refers to st7735.o(.text.ST7735_DrawBitmap) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_DrawCharS) refers to st7735.o(.bss._width) for _width
+    st7735.o(.text.ST7735_DrawCharS) refers to st7735.o(.bss._height) for _height
+    st7735.o(.text.ST7735_DrawCharS) refers to st7735.o(.rodata.Font) for Font
+    st7735.o(.text.ST7735_DrawCharS) refers to st7735.o(.text.ST7735_FillRect) for ST7735_FillRect
+    st7735.o(.text.ST7735_DrawCharS) refers to st7735.o(.text.setAddrWindow) for setAddrWindow
+    st7735.o(.text.ST7735_DrawCharS) refers to busywait.o(.text) for SPIOutData
+    st7735.o(.ARM.exidx.text.ST7735_DrawCharS) refers to st7735.o(.text.ST7735_DrawCharS) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_DrawChar) refers to st7735.o(.bss._width) for _width
+    st7735.o(.text.ST7735_DrawChar) refers to st7735.o(.bss._height) for _height
+    st7735.o(.text.ST7735_DrawChar) refers to st7735.o(.text.setAddrWindow) for setAddrWindow
+    st7735.o(.text.ST7735_DrawChar) refers to st7735.o(.rodata.Font) for Font
+    st7735.o(.text.ST7735_DrawChar) refers to busywait.o(.text) for SPIOutData
+    st7735.o(.ARM.exidx.text.ST7735_DrawChar) refers to st7735.o(.text.ST7735_DrawChar) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_DrawString) refers to st7735.o(.text.ST7735_DrawCharS) for ST7735_DrawCharS
+    st7735.o(.ARM.exidx.text.ST7735_DrawString) refers to st7735.o(.text.ST7735_DrawString) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_OutUDec) refers to st7735.o(.bss.Message) for Message
+    st7735.o(.text.ST7735_OutUDec) refers to stringconversion.o(.text) for Dec2String
+    st7735.o(.text.ST7735_OutUDec) refers to st7735.o(.bss.StY) for StY
+    st7735.o(.text.ST7735_OutUDec) refers to st7735.o(.bss.StX) for StX
+    st7735.o(.text.ST7735_OutUDec) refers to st7735.o(.data.StTextColor) for StTextColor
+    st7735.o(.text.ST7735_OutUDec) refers to st7735.o(.text.ST7735_DrawCharS) for ST7735_DrawCharS
+    st7735.o(.ARM.exidx.text.ST7735_OutUDec) refers to st7735.o(.text.ST7735_OutUDec) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_OutFix) refers to st7735.o(.bss.Message) for Message
+    st7735.o(.text.ST7735_OutFix) refers to stringconversion.o(.text) for Fix2String
+    st7735.o(.text.ST7735_OutFix) refers to st7735.o(.bss.StY) for StY
+    st7735.o(.text.ST7735_OutFix) refers to st7735.o(.bss.StX) for StX
+    st7735.o(.text.ST7735_OutFix) refers to st7735.o(.data.StTextColor) for StTextColor
+    st7735.o(.text.ST7735_OutFix) refers to st7735.o(.text.ST7735_DrawCharS) for ST7735_DrawCharS
+    st7735.o(.ARM.exidx.text.ST7735_OutFix) refers to st7735.o(.text.ST7735_OutFix) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_SetRotation) refers to busywait.o(.text) for SPIOutCommand
+    st7735.o(.text.ST7735_SetRotation) refers to st7735.o(.bss.TabColor) for TabColor
+    st7735.o(.text.ST7735_SetRotation) refers to st7735.o(.bss._width) for _width
+    st7735.o(.text.ST7735_SetRotation) refers to st7735.o(.bss._height) for _height
+    st7735.o(.ARM.exidx.text.ST7735_SetRotation) refers to st7735.o(.text.ST7735_SetRotation) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_InvertDisplay) refers to busywait.o(.text) for SPIOutCommand
+    st7735.o(.ARM.exidx.text.ST7735_InvertDisplay) refers to st7735.o(.text.ST7735_InvertDisplay) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_PlotClear) refers to st7735.o(.text.ST7735_FillRect) for ST7735_FillRect
+    st7735.o(.text.ST7735_PlotClear) refers to st7735.o(.bss.Ymax) for Ymax
+    st7735.o(.text.ST7735_PlotClear) refers to st7735.o(.bss.Ymin) for Ymin
+    st7735.o(.text.ST7735_PlotClear) refers to st7735.o(.bss.Yrange) for Yrange
+    st7735.o(.text.ST7735_PlotClear) refers to st7735.o(.bss.X) for X
+    st7735.o(.ARM.exidx.text.ST7735_PlotClear) refers to st7735.o(.text.ST7735_PlotClear) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_PlotPoint) refers to st7735.o(.bss.Ymin) for Ymin
+    st7735.o(.text.ST7735_PlotPoint) refers to st7735.o(.bss.Ymax) for Ymax
+    st7735.o(.text.ST7735_PlotPoint) refers to st7735.o(.bss.Yrange) for Yrange
+    st7735.o(.text.ST7735_PlotPoint) refers to st7735.o(.bss.X) for X
+    st7735.o(.text.ST7735_PlotPoint) refers to st7735.o(.bss._width) for _width
+    st7735.o(.text.ST7735_PlotPoint) refers to st7735.o(.bss._height) for _height
+    st7735.o(.text.ST7735_PlotPoint) refers to st7735.o(.text.setAddrWindow) for setAddrWindow
+    st7735.o(.text.ST7735_PlotPoint) refers to busywait.o(.text) for SPIOutData
+    st7735.o(.ARM.exidx.text.ST7735_PlotPoint) refers to st7735.o(.text.ST7735_PlotPoint) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_PlotLine) refers to st7735.o(.bss.Ymin) for Ymin
+    st7735.o(.text.ST7735_PlotLine) refers to st7735.o(.bss.Ymax) for Ymax
+    st7735.o(.text.ST7735_PlotLine) refers to st7735.o(.bss.Yrange) for Yrange
+    st7735.o(.text.ST7735_PlotLine) refers to st7735.o(.bss.lastj) for lastj
+    st7735.o(.text.ST7735_PlotLine) refers to st7735.o(.bss.X) for X
+    st7735.o(.text.ST7735_PlotLine) refers to st7735.o(.bss._width) for _width
+    st7735.o(.text.ST7735_PlotLine) refers to st7735.o(.bss._height) for _height
+    st7735.o(.text.ST7735_PlotLine) refers to st7735.o(.text.setAddrWindow) for setAddrWindow
+    st7735.o(.text.ST7735_PlotLine) refers to busywait.o(.text) for SPIOutData
+    st7735.o(.ARM.exidx.text.ST7735_PlotLine) refers to st7735.o(.text.ST7735_PlotLine) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_PlotPoints) refers to st7735.o(.bss.Ymin) for Ymin
+    st7735.o(.text.ST7735_PlotPoints) refers to st7735.o(.bss.Ymax) for Ymax
+    st7735.o(.text.ST7735_PlotPoints) refers to st7735.o(.bss.Yrange) for Yrange
+    st7735.o(.text.ST7735_PlotPoints) refers to st7735.o(.bss.X) for X
+    st7735.o(.text.ST7735_PlotPoints) refers to st7735.o(.bss._width) for _width
+    st7735.o(.text.ST7735_PlotPoints) refers to st7735.o(.bss._height) for _height
+    st7735.o(.text.ST7735_PlotPoints) refers to st7735.o(.text.setAddrWindow) for setAddrWindow
+    st7735.o(.text.ST7735_PlotPoints) refers to busywait.o(.text) for SPIOutData
+    st7735.o(.ARM.exidx.text.ST7735_PlotPoints) refers to st7735.o(.text.ST7735_PlotPoints) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_PlotBar) refers to st7735.o(.bss.Ymin) for Ymin
+    st7735.o(.text.ST7735_PlotBar) refers to st7735.o(.bss.Ymax) for Ymax
+    st7735.o(.text.ST7735_PlotBar) refers to st7735.o(.bss.X) for X
+    st7735.o(.text.ST7735_PlotBar) refers to st7735.o(.bss._width) for _width
+    st7735.o(.text.ST7735_PlotBar) refers to st7735.o(.bss.Yrange) for Yrange
+    st7735.o(.text.ST7735_PlotBar) refers to st7735.o(.bss._height) for _height
+    st7735.o(.text.ST7735_PlotBar) refers to st7735.o(.text.setAddrWindow) for setAddrWindow
+    st7735.o(.text.ST7735_PlotBar) refers to busywait.o(.text) for SPIOutData
+    st7735.o(.ARM.exidx.text.ST7735_PlotBar) refers to st7735.o(.text.ST7735_PlotBar) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_PlotdBfs) refers to st7735.o(.bss.X) for X
+    st7735.o(.text.ST7735_PlotdBfs) refers to st7735.o(.bss._width) for _width
+    st7735.o(.text.ST7735_PlotdBfs) refers to st7735.o(.rodata.dBfs) for dBfs
+    st7735.o(.text.ST7735_PlotdBfs) refers to st7735.o(.bss._height) for _height
+    st7735.o(.text.ST7735_PlotdBfs) refers to st7735.o(.text.setAddrWindow) for setAddrWindow
+    st7735.o(.text.ST7735_PlotdBfs) refers to busywait.o(.text) for SPIOutData
+    st7735.o(.ARM.exidx.text.ST7735_PlotdBfs) refers to st7735.o(.text.ST7735_PlotdBfs) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_PlotNext) refers to st7735.o(.bss.X) for X
+    st7735.o(.ARM.exidx.text.ST7735_PlotNext) refers to st7735.o(.text.ST7735_PlotNext) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_PlotNextErase) refers to st7735.o(.bss.X) for X
+    st7735.o(.text.ST7735_PlotNextErase) refers to st7735.o(.bss._width) for _width
+    st7735.o(.text.ST7735_PlotNextErase) refers to st7735.o(.bss._height) for _height
+    st7735.o(.text.ST7735_PlotNextErase) refers to st7735.o(.text.setAddrWindow) for setAddrWindow
+    st7735.o(.text.ST7735_PlotNextErase) refers to busywait.o(.text) for SPIOutData
+    st7735.o(.ARM.exidx.text.ST7735_PlotNextErase) refers to st7735.o(.text.ST7735_PlotNextErase) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_OutChar) refers to st7735.o(.bss.StY) for StY
+    st7735.o(.text.ST7735_OutChar) refers to st7735.o(.bss.StX) for StX
+    st7735.o(.text.ST7735_OutChar) refers to st7735.o(.data.StTextColor) for StTextColor
+    st7735.o(.text.ST7735_OutChar) refers to st7735.o(.text.ST7735_DrawCharS) for ST7735_DrawCharS
+    st7735.o(.ARM.exidx.text.ST7735_OutChar) refers to st7735.o(.text.ST7735_OutChar) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_OutString) refers to st7735.o(.text.ST7735_OutChar) for ST7735_OutChar
+    st7735.o(.ARM.exidx.text.ST7735_OutString) refers to st7735.o(.text.ST7735_OutString) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_SetTextColor) refers to st7735.o(.data.StTextColor) for StTextColor
+    st7735.o(.ARM.exidx.text.ST7735_SetTextColor) refers to st7735.o(.text.ST7735_SetTextColor) for [Anonymous Symbol]
+    st7735.o(.text.fputc) refers to st7735.o(.text.ST7735_OutChar) for ST7735_OutChar
+    st7735.o(.ARM.exidx.text.fputc) refers to st7735.o(.text.fputc) for [Anonymous Symbol]
+    st7735.o(.ARM.exidx.text.fgetc) refers to st7735.o(.text.fgetc) for [Anonymous Symbol]
+    st7735.o(.ARM.exidx.text.ferror) refers to st7735.o(.text.ferror) for [Anonymous Symbol]
+    st7735.o(.text.Output_Init) refers to st7735.o(.rodata.Rcmd1) for Rcmd1
+    st7735.o(.text.Output_Init) refers to st7735.o(.text.commonInit) for commonInit
+    st7735.o(.text.Output_Init) refers to st7735.o(.rodata.Rcmd2red) for Rcmd2red
+    st7735.o(.text.Output_Init) refers to st7735.o(.text.commandList) for commandList
+    st7735.o(.text.Output_Init) refers to st7735.o(.rodata.Rcmd3) for Rcmd3
+    st7735.o(.text.Output_Init) refers to st7735.o(.bss.TabColor) for TabColor
+    st7735.o(.text.Output_Init) refers to st7735.o(.data.StTextColor) for StTextColor
+    st7735.o(.text.Output_Init) refers to st7735.o(.bss._width) for _width
+    st7735.o(.text.Output_Init) refers to st7735.o(.bss.StX) for StX
+    st7735.o(.text.Output_Init) refers to st7735.o(.bss._height) for _height
+    st7735.o(.text.Output_Init) refers to st7735.o(.bss.StY) for StY
+    st7735.o(.text.Output_Init) refers to st7735.o(.text.ST7735_FillRect) for ST7735_FillRect
+    st7735.o(.ARM.exidx.text.Output_Init) refers to st7735.o(.text.Output_Init) for [Anonymous Symbol]
+    st7735.o(.text.Output_Clear) refers to st7735.o(.bss._width) for _width
+    st7735.o(.text.Output_Clear) refers to st7735.o(.bss._height) for _height
+    st7735.o(.text.Output_Clear) refers to st7735.o(.text.ST7735_FillRect) for ST7735_FillRect
+    st7735.o(.ARM.exidx.text.Output_Clear) refers to st7735.o(.text.Output_Clear) for [Anonymous Symbol]
+    st7735.o(.text.Output_Off) refers to st7735.o(.bss._width) for _width
+    st7735.o(.text.Output_Off) refers to st7735.o(.bss._height) for _height
+    st7735.o(.text.Output_Off) refers to st7735.o(.text.ST7735_FillRect) for ST7735_FillRect
+    st7735.o(.ARM.exidx.text.Output_Off) refers to st7735.o(.text.Output_Off) for [Anonymous Symbol]
+    st7735.o(.text.Output_On) refers to st7735.o(.rodata.Rcmd1) for Rcmd1
+    st7735.o(.text.Output_On) refers to st7735.o(.text.commonInit) for commonInit
+    st7735.o(.text.Output_On) refers to st7735.o(.rodata.Rcmd2red) for Rcmd2red
+    st7735.o(.text.Output_On) refers to st7735.o(.text.commandList) for commandList
+    st7735.o(.text.Output_On) refers to st7735.o(.rodata.Rcmd3) for Rcmd3
+    st7735.o(.text.Output_On) refers to st7735.o(.bss.TabColor) for TabColor
+    st7735.o(.text.Output_On) refers to st7735.o(.data.StTextColor) for StTextColor
+    st7735.o(.text.Output_On) refers to st7735.o(.bss._width) for _width
+    st7735.o(.text.Output_On) refers to st7735.o(.bss.StX) for StX
+    st7735.o(.text.Output_On) refers to st7735.o(.bss._height) for _height
+    st7735.o(.text.Output_On) refers to st7735.o(.bss.StY) for StY
+    st7735.o(.text.Output_On) refers to st7735.o(.text.ST7735_FillRect) for ST7735_FillRect
+    st7735.o(.ARM.exidx.text.Output_On) refers to st7735.o(.text.Output_On) for [Anonymous Symbol]
+    st7735.o(.text.Output_Color) refers to st7735.o(.data.StTextColor) for StTextColor
+    st7735.o(.ARM.exidx.text.Output_Color) refers to st7735.o(.text.Output_Color) for [Anonymous Symbol]
+    pll.o(.ARM.exidx.text.PLL_Init) refers to pll.o(.text.PLL_Init) for [Anonymous Symbol]
+    timer3a.o(i.Timer3A_Handler) refers to timer3a.o(.data) for PeriodicTask3
+    timer3a.o(i.Timer3A_Init) refers to timer3a.o(.data) for PeriodicTask3
+    lab7grader.o(.ARM.exidx.text.Scope) refers to lab7grader.o(.text.Scope) for [Anonymous Symbol]
+    lab7grader.o(.ARM.exidx.text.LogicAnalyzerA) refers to lab7grader.o(.text.LogicAnalyzerA) for [Anonymous Symbol]
+    lab7grader.o(.ARM.exidx.text.LogicAnalyzerB) refers to lab7grader.o(.text.LogicAnalyzerB) for [Anonymous Symbol]
+    lab7grader.o(.ARM.exidx.text.LogicAnalyzerC) refers to lab7grader.o(.text.LogicAnalyzerC) for [Anonymous Symbol]
+    lab7grader.o(.ARM.exidx.text.LogicAnalyzerE) refers to lab7grader.o(.text.LogicAnalyzerE) for [Anonymous Symbol]
+    lab7grader.o(.text.PeriodicTask2_Init) refers to lab7grader.o(.bss.PeriodicTask2) for PeriodicTask2
+    lab7grader.o(.ARM.exidx.text.PeriodicTask2_Init) refers to lab7grader.o(.text.PeriodicTask2_Init) for [Anonymous Symbol]
+    lab7grader.o(.text.Timer5A_Handler) refers to lab7grader.o(.bss.PeriodicTask2) for PeriodicTask2
+    lab7grader.o(.ARM.exidx.text.Timer5A_Handler) refers to lab7grader.o(.text.Timer5A_Handler) for [Anonymous Symbol]
+    lab7grader.o(.ARM.exidx.text.PeriodicTask2_Stop) refers to lab7grader.o(.text.PeriodicTask2_Stop) for [Anonymous Symbol]
+    lab7grader.o(.ARM.exidx.text.UART0_Init) refers to lab7grader.o(.text.UART0_Init) for [Anonymous Symbol]
+    lab7grader.o(.ARM.exidx.text.UART0_InChar) refers to lab7grader.o(.text.UART0_InChar) for [Anonymous Symbol]
+    lab7grader.o(.ARM.exidx.text.UART0_OutChar) refers to lab7grader.o(.text.UART0_OutChar) for [Anonymous Symbol]
+    lab7grader.o(.ARM.exidx.text.UART0_OutString) refers to lab7grader.o(.text.UART0_OutString) for [Anonymous Symbol]
+    lab7grader.o(.ARM.exidx.text.UART0_OutUDec) refers to lab7grader.o(.text.UART0_OutUDec) for [Anonymous Symbol]
+    lab7grader.o(.ARM.exidx.text.OutCRLF0) refers to lab7grader.o(.text.OutCRLF0) for [Anonymous Symbol]
+    lab7grader.o(.ARM.exidx.text.ADC1_Init) refers to lab7grader.o(.text.ADC1_Init) for [Anonymous Symbol]
+    lab7grader.o(.text.ClearBit4) refers to lab7grader.o(.bss.GraderTime) for GraderTime
+    lab7grader.o(.text.ClearBit4) refers to lab7grader.o(.bss.GraderStatus) for GraderStatus
+    lab7grader.o(.text.ClearBit4) refers to lab7grader.o(.bss.Fail) for Fail
+    lab7grader.o(.text.ClearBit4) refers to timer3a.o(i.Timer3A_Stop) for Timer3A_Stop
+    lab7grader.o(.text.ClearBit4) refers to lab7grader.o(.rodata.str1.1) for .L.str
+    lab7grader.o(.ARM.exidx.text.ClearBit4) refers to lab7grader.o(.text.ClearBit4) for [Anonymous Symbol]
+    lab7grader.o(.text.GradeSPIOutCommand) refers to lab7grader.o(.bss.GraderTime) for GraderTime
+    lab7grader.o(.text.GradeSPIOutCommand) refers to lab7grader.o(.bss.GraderStatus) for GraderStatus
+    lab7grader.o(.text.GradeSPIOutCommand) refers to lab7grader.o(.bss.GraderGPIO) for GraderGPIO
+    lab7grader.o(.text.GradeSPIOutCommand) refers to lab7grader.o(.rodata.str1.1) for .L.str.2
+    lab7grader.o(.text.GradeSPIOutCommand) refers to lab7grader.o(.text.ClearBit4) for ClearBit4
+    lab7grader.o(.text.GradeSPIOutCommand) refers to timer3a.o(i.Timer3A_Init) for Timer3A_Init
+    lab7grader.o(.text.GradeSPIOutCommand) refers to startup.o(.text) for EnableInterrupts
+    lab7grader.o(.text.GradeSPIOutCommand) refers to lab7grader.o(.bss.GraderData) for GraderData
+    lab7grader.o(.text.GradeSPIOutCommand) refers to lab7graderwrapper.o(.text) for testSPIOutCommand
+    lab7grader.o(.text.GradeSPIOutCommand) refers to timer3a.o(i.Timer3A_Stop) for Timer3A_Stop
+    lab7grader.o(.text.GradeSPIOutCommand) refers to lab7grader.o(.bss.Score) for Score
+    lab7grader.o(.text.GradeSPIOutCommand) refers to lab7grader.o(.text.UART0_OutUDec) for UART0_OutUDec
+    lab7grader.o(.text.GradeSPIOutCommand) refers to lab7grader.o(.bss.Fail) for Fail
+    lab7grader.o(.ARM.exidx.text.GradeSPIOutCommand) refers to lab7grader.o(.text.GradeSPIOutCommand) for [Anonymous Symbol]
+    lab7grader.o(.text.SetBit1) refers to lab7grader.o(.bss.GraderTime) for GraderTime
+    lab7grader.o(.text.SetBit1) refers to lab7grader.o(.bss.GraderStatus) for GraderStatus
+    lab7grader.o(.text.SetBit1) refers to lab7grader.o(.bss.Fail) for Fail
+    lab7grader.o(.text.SetBit1) refers to timer3a.o(i.Timer3A_Stop) for Timer3A_Stop
+    lab7grader.o(.text.SetBit1) refers to lab7grader.o(.rodata.str1.1) for .L.str.10
+    lab7grader.o(.text.SetBit1) refers to lab7grader.o(.bss.Score) for Score
+    lab7grader.o(.text.SetBit1) refers to lab7grader.o(.text.UART0_OutUDec) for UART0_OutUDec
+    lab7grader.o(.ARM.exidx.text.SetBit1) refers to lab7grader.o(.text.SetBit1) for [Anonymous Symbol]
+    lab7grader.o(.text.GradeSPIOutData) refers to lab7grader.o(.bss.GraderTime) for GraderTime
+    lab7grader.o(.text.GradeSPIOutData) refers to lab7grader.o(.bss.GraderStatus) for GraderStatus
+    lab7grader.o(.text.GradeSPIOutData) refers to lab7grader.o(.bss.GraderGPIO) for GraderGPIO
+    lab7grader.o(.text.GradeSPIOutData) refers to lab7grader.o(.rodata.str1.1) for .L.str.12
+    lab7grader.o(.text.GradeSPIOutData) refers to lab7grader.o(.text.SetBit1) for SetBit1
+    lab7grader.o(.text.GradeSPIOutData) refers to timer3a.o(i.Timer3A_Init) for Timer3A_Init
+    lab7grader.o(.text.GradeSPIOutData) refers to startup.o(.text) for EnableInterrupts
+    lab7grader.o(.text.GradeSPIOutData) refers to lab7grader.o(.bss.GraderData) for GraderData
+    lab7grader.o(.text.GradeSPIOutData) refers to lab7graderwrapper.o(.text) for testSPIOutData
+    lab7grader.o(.text.GradeSPIOutData) refers to timer3a.o(i.Timer3A_Stop) for Timer3A_Stop
+    lab7grader.o(.text.GradeSPIOutData) refers to lab7grader.o(.bss.Score) for Score
+    lab7grader.o(.text.GradeSPIOutData) refers to lab7grader.o(.text.UART0_OutUDec) for UART0_OutUDec
+    lab7grader.o(.text.GradeSPIOutData) refers to lab7grader.o(.bss.Fail) for Fail
+    lab7grader.o(.ARM.exidx.text.GradeSPIOutData) refers to lab7grader.o(.text.GradeSPIOutData) for [Anonymous Symbol]
+    lab7grader.o(.text.GradeIO_Init) refers to lab7grader.o(.rodata.str1.1) for .L.str.15
+    lab7grader.o(.text.GradeIO_Init) refers to io.o(.text.IO_Init) for IO_Init
+    lab7grader.o(.text.GradeIO_Init) refers to lab7grader.o(.bss.Score) for Score
+    lab7grader.o(.text.GradeIO_Init) refers to lab7grader.o(.text.UART0_OutUDec) for UART0_OutUDec
+    lab7grader.o(.text.GradeIO_Init) refers to lab7grader.o(.bss.Fail) for Fail
+    lab7grader.o(.ARM.exidx.text.GradeIO_Init) refers to lab7grader.o(.text.GradeIO_Init) for [Anonymous Symbol]
+    lab7grader.o(.text.Random32) refers to lab7grader.o(.bss.M) for M
+    lab7grader.o(.ARM.exidx.text.Random32) refers to lab7grader.o(.text.Random32) for [Anonymous Symbol]
+    lab7grader.o(.text.Random6) refers to lab7grader.o(.bss.M6) for M6
+    lab7grader.o(.ARM.exidx.text.Random6) refers to lab7grader.o(.text.Random6) for [Anonymous Symbol]
+    lab7grader.o(.text.Random) refers to lab7grader.o(.bss.M) for M
+    lab7grader.o(.ARM.exidx.text.Random) refers to lab7grader.o(.text.Random) for [Anonymous Symbol]
+    lab7grader.o(.text.GradeDec2String) refers to lab7grader.o(.rodata.str1.1) for .L.str.20
+    lab7grader.o(.text.GradeDec2String) refers to lab7grader.o(.bss.M) for M
+    lab7grader.o(.text.GradeDec2String) refers to lab7grader.o(.bss.yourMessage) for yourMessage
+    lab7grader.o(.text.GradeDec2String) refers to lab7grader.o(.bss.myMessage) for myMessage
+    lab7grader.o(.text.GradeDec2String) refers to lab7graderwrapper.o(.text) for testDec2String
+    lab7grader.o(.text.GradeDec2String) refers to strcmp.o(.text) for strcmp
+    lab7grader.o(.text.GradeDec2String) refers to lab7grader.o(.bss.Score) for Score
+    lab7grader.o(.text.GradeDec2String) refers to lab7grader.o(.text.UART0_OutUDec) for UART0_OutUDec
+    lab7grader.o(.text.GradeDec2String) refers to lab7grader.o(.bss.Fail) for Fail
+    lab7grader.o(.ARM.exidx.text.GradeDec2String) refers to lab7grader.o(.text.GradeDec2String) for [Anonymous Symbol]
+    lab7grader.o(.text.GradeFix2String) refers to lab7grader.o(.rodata.str1.1) for .L.str.24
+    lab7grader.o(.text.GradeFix2String) refers to lab7grader.o(.bss.yourMessage) for yourMessage
+    lab7grader.o(.text.GradeFix2String) refers to lab7grader.o(.bss.myMessage) for myMessage
+    lab7grader.o(.text.GradeFix2String) refers to lab7graderwrapper.o(.text) for testFix2String
+    lab7grader.o(.text.GradeFix2String) refers to strcmp.o(.text) for strcmp
+    lab7grader.o(.text.GradeFix2String) refers to lab7grader.o(.bss.Score) for Score
+    lab7grader.o(.text.GradeFix2String) refers to lab7grader.o(.text.UART0_OutUDec) for UART0_OutUDec
+    lab7grader.o(.text.GradeFix2String) refers to lab7grader.o(.bss.Fail) for Fail
+    lab7grader.o(.ARM.exidx.text.GradeFix2String) refers to lab7grader.o(.text.GradeFix2String) for [Anonymous Symbol]
+    lab7grader.o(.ARM.exidx.text.setUpper) refers to lab7grader.o(.text.setUpper) for [Anonymous Symbol]
+    lab7grader.o(.text.TExaS_Init) refers to startup.o(.text) for DisableInterrupts
+    lab7grader.o(.text.TExaS_Init) refers to pll.o(.text.PLL_Init) for PLL_Init
+    lab7grader.o(.text.TExaS_Init) refers to lab7grader.o(.bss.M) for M
+    lab7grader.o(.text.TExaS_Init) refers to lab7grader.o(.bss.Score) for Score
+    lab7grader.o(.text.TExaS_Init) refers to lab7grader.o(.rodata.str1.1) for .L.str.25
+    lab7grader.o(.text.TExaS_Init) refers to lab7main.o(.data.EID1) for EID1
+    lab7grader.o(.text.TExaS_Init) refers to memcmp.o(.text) for memcmp
+    lab7grader.o(.text.TExaS_Init) refers to lab7main.o(.data.EID2) for EID2
+    lab7grader.o(.text.TExaS_Init) refers to lab7grader.o(.bss.PeriodicTask2) for PeriodicTask2
+    lab7grader.o(.text.TExaS_Init) refers to lab7grader.o(.text.Scope) for Scope
+    lab7grader.o(.text.TExaS_Init) refers to lab7grader.o(.text.LogicAnalyzerA) for LogicAnalyzerA
+    lab7grader.o(.text.TExaS_Init) refers to lab7grader.o(.text.LogicAnalyzerB) for LogicAnalyzerB
+    lab7grader.o(.text.TExaS_Init) refers to lab7grader.o(.text.LogicAnalyzerC) for LogicAnalyzerC
+    lab7grader.o(.text.TExaS_Init) refers to lab7grader.o(.text.LogicAnalyzerE) for LogicAnalyzerE
+    lab7grader.o(.text.TExaS_Init) refers to lab7grader.o(.text.GradeSPIOutCommand) for GradeSPIOutCommand
+    lab7grader.o(.text.TExaS_Init) refers to lab7grader.o(.text.GradeSPIOutData) for GradeSPIOutData
+    lab7grader.o(.text.TExaS_Init) refers to lab7grader.o(.text.GradeIO_Init) for GradeIO_Init
+    lab7grader.o(.text.TExaS_Init) refers to lab7grader.o(.text.GradeDec2String) for GradeDec2String
+    lab7grader.o(.text.TExaS_Init) refers to lab7grader.o(.text.GradeFix2String) for GradeFix2String
+    lab7grader.o(.text.TExaS_Init) refers to lab7grader.o(.bss.Fail) for Fail
+    lab7grader.o(.ARM.exidx.text.TExaS_Init) refers to lab7grader.o(.text.TExaS_Init) for [Anonymous Symbol]
+    lab7grader.o(.ARM.exidx.text.TExaS_Stop) refers to lab7grader.o(.text.TExaS_Stop) for [Anonymous Symbol]
+    lab7graderwrapper.o(.text) refers to busywait.o(.text) for SPIOutCommand
+    lab7graderwrapper.o(.text) refers to stringconversion.o(.text) for Dec2String
+    lab7graderwrapper.o(.text) refers to lab7graderwrapper.o(data) for SaveSP
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$0000000F) for __rt_final_exit
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry8b.o(.ARM.Collect$$$$0000000A) for _main_cpp_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry9a.o(.ARM.Collect$$$$0000000B) for _main_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry2.o(.ARM.Collect$$$$00000001) for _main_stk
+    entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
+    entry2.o(.ARM.Collect$$$$00002712) refers to startup.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to startup.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
+    entry9a.o(.ARM.Collect$$$$0000000B) refers to lab7main.o(.text.main) for main
+    entry9b.o(.ARM.Collect$$$$0000000C) refers to lab7main.o(.text.main) for main
+    init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing startup.o(HEAP), (0 bytes).
+    Removing lab7main.o(.text), (0 bytes).
+    Removing lab7main.o(.ARM.exidx.text.main), (8 bytes).
+    Removing lab7main.o(.bss.pt), (4 bytes).
+    Removing lab7main.o(.bss.Test), (20 bytes).
+    Removing lab7main.o(.ARM.use_no_argv), (4 bytes).
+    Removing io.o(.text), (0 bytes).
+    Removing io.o(.ARM.exidx.text.IO_Init), (8 bytes).
+    Removing io.o(.ARM.exidx.text.IO_HeartBeat), (8 bytes).
+    Removing io.o(.ARM.exidx.text.IO_Touch), (8 bytes).
+    Removing io.o(.text.Wait10ms), (2 bytes).
+    Removing io.o(.ARM.exidx.text.Wait10ms), (8 bytes).
+    Removing st7735.o(.text), (0 bytes).
+    Removing st7735.o(.text.writecommand), (22 bytes).
+    Removing st7735.o(.ARM.exidx.text.writecommand), (8 bytes).
+    Removing st7735.o(.text.writedata), (22 bytes).
+    Removing st7735.o(.ARM.exidx.text.writedata), (8 bytes).
+    Removing st7735.o(.text.Delay1ms), (38 bytes).
+    Removing st7735.o(.ARM.exidx.text.Delay1ms), (8 bytes).
+    Removing st7735.o(.text.ST7735_InitB), (114 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_InitB), (8 bytes).
+    Removing st7735.o(.ARM.exidx.text.commonInit), (8 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_SetCursor), (8 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_FillScreen), (8 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_InitR), (8 bytes).
+    Removing st7735.o(.ARM.exidx.text.commandList), (8 bytes).
+    Removing st7735.o(.text.ST7735_DrawPixel), (122 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_DrawPixel), (8 bytes).
+    Removing st7735.o(.ARM.exidx.text.setAddrWindow), (8 bytes).
+    Removing st7735.o(.text.ST7735_DrawFastVLine), (146 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_DrawFastVLine), (8 bytes).
+    Removing st7735.o(.text.ST7735_DrawFastHLine), (146 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_DrawFastHLine), (8 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_FillRect), (8 bytes).
+    Removing st7735.o(.text.ST7735_DrawSmallCircle), (210 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_DrawSmallCircle), (8 bytes).
+    Removing st7735.o(.text.ST7735_DrawCircle), (210 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_DrawCircle), (8 bytes).
+    Removing st7735.o(.text.ST7735_Color565), (20 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_Color565), (8 bytes).
+    Removing st7735.o(.text.ST7735_SwapColor), (16 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_SwapColor), (8 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_DrawBitmap), (8 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_DrawCharS), (8 bytes).
+    Removing st7735.o(.text.ST7735_DrawChar), (356 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_DrawChar), (8 bytes).
+    Removing st7735.o(.text.ST7735_DrawString), (106 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_DrawString), (8 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_OutUDec), (8 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_OutFix), (8 bytes).
+    Removing st7735.o(.text.ST7735_SetRotation), (168 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_SetRotation), (8 bytes).
+    Removing st7735.o(.text.ST7735_InvertDisplay), (36 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_InvertDisplay), (8 bytes).
+    Removing st7735.o(.text.ST7735_PlotClear), (88 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_PlotClear), (8 bytes).
+    Removing st7735.o(.text.ST7735_PlotPoint), (518 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_PlotPoint), (8 bytes).
+    Removing st7735.o(.text.ST7735_PlotLine), (942 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_PlotLine), (8 bytes).
+    Removing st7735.o(.text.ST7735_PlotPoints), (374 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_PlotPoints), (8 bytes).
+    Removing st7735.o(.text.ST7735_PlotBar), (206 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_PlotBar), (8 bytes).
+    Removing st7735.o(.text.ST7735_PlotdBfs), (170 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_PlotdBfs), (8 bytes).
+    Removing st7735.o(.text.ST7735_PlotNext), (22 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_PlotNext), (8 bytes).
+    Removing st7735.o(.text.ST7735_PlotNextErase), (134 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_PlotNextErase), (8 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_OutChar), (8 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_OutString), (8 bytes).
+    Removing st7735.o(.text.ST7735_SetTextColor), (12 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_SetTextColor), (8 bytes).
+    Removing st7735.o(.text.fputc), (12 bytes).
+    Removing st7735.o(.ARM.exidx.text.fputc), (8 bytes).
+    Removing st7735.o(.text.fgetc), (4 bytes).
+    Removing st7735.o(.ARM.exidx.text.fgetc), (8 bytes).
+    Removing st7735.o(.text.ferror), (6 bytes).
+    Removing st7735.o(.ARM.exidx.text.ferror), (8 bytes).
+    Removing st7735.o(.text.Output_Init), (190 bytes).
+    Removing st7735.o(.ARM.exidx.text.Output_Init), (8 bytes).
+    Removing st7735.o(.text.Output_Clear), (64 bytes).
+    Removing st7735.o(.ARM.exidx.text.Output_Clear), (8 bytes).
+    Removing st7735.o(.text.Output_Off), (64 bytes).
+    Removing st7735.o(.ARM.exidx.text.Output_Off), (8 bytes).
+    Removing st7735.o(.text.Output_On), (190 bytes).
+    Removing st7735.o(.ARM.exidx.text.Output_On), (8 bytes).
+    Removing st7735.o(.text.Output_Color), (12 bytes).
+    Removing st7735.o(.ARM.exidx.text.Output_Color), (8 bytes).
+    Removing st7735.o(.rodata.Bcmd), (103 bytes).
+    Removing st7735.o(.rodata.smallCircle), (36 bytes).
+    Removing st7735.o(.rodata.circle), (60 bytes).
+    Removing st7735.o(.bss.Ymax), (4 bytes).
+    Removing st7735.o(.bss.Ymin), (4 bytes).
+    Removing st7735.o(.bss.Yrange), (4 bytes).
+    Removing st7735.o(.bss.X), (4 bytes).
+    Removing st7735.o(.bss.lastj), (4 bytes).
+    Removing st7735.o(.rodata.dBfs), (512 bytes).
+    Removing st7735.o(.bss.Messageindex), (4 bytes).
+    Removing pll.o(.text), (0 bytes).
+    Removing pll.o(.ARM.exidx.text.PLL_Init), (8 bytes).
+    Removing lab7grader.o(.text), (0 bytes).
+    Removing lab7grader.o(.ARM.exidx.text.Scope), (8 bytes).
+    Removing lab7grader.o(.ARM.exidx.text.LogicAnalyzerA), (8 bytes).
+    Removing lab7grader.o(.ARM.exidx.text.LogicAnalyzerB), (8 bytes).
+    Removing lab7grader.o(.ARM.exidx.text.LogicAnalyzerC), (8 bytes).
+    Removing lab7grader.o(.ARM.exidx.text.LogicAnalyzerE), (8 bytes).
+    Removing lab7grader.o(.text.PeriodicTask2_Init), (184 bytes).
+    Removing lab7grader.o(.ARM.exidx.text.PeriodicTask2_Init), (8 bytes).
+    Removing lab7grader.o(.ARM.exidx.text.Timer5A_Handler), (8 bytes).
+    Removing lab7grader.o(.text.PeriodicTask2_Stop), (44 bytes).
+    Removing lab7grader.o(.ARM.exidx.text.PeriodicTask2_Stop), (8 bytes).
+    Removing lab7grader.o(.text.UART0_Init), (122 bytes).
+    Removing lab7grader.o(.ARM.exidx.text.UART0_Init), (8 bytes).
+    Removing lab7grader.o(.text.UART0_InChar), (20 bytes).
+    Removing lab7grader.o(.ARM.exidx.text.UART0_InChar), (8 bytes).
+    Removing lab7grader.o(.text.UART0_OutChar), (18 bytes).
+    Removing lab7grader.o(.ARM.exidx.text.UART0_OutChar), (8 bytes).
+    Removing lab7grader.o(.text.UART0_OutString), (34 bytes).
+    Removing lab7grader.o(.ARM.exidx.text.UART0_OutString), (8 bytes).
+    Removing lab7grader.o(.ARM.exidx.text.UART0_OutUDec), (8 bytes).
+    Removing lab7grader.o(.text.OutCRLF0), (32 bytes).
+    Removing lab7grader.o(.ARM.exidx.text.OutCRLF0), (8 bytes).
+    Removing lab7grader.o(.text.ADC1_Init), (170 bytes).
+    Removing lab7grader.o(.ARM.exidx.text.ADC1_Init), (8 bytes).
+    Removing lab7grader.o(.ARM.exidx.text.ClearBit4), (8 bytes).
+    Removing lab7grader.o(.ARM.exidx.text.GradeSPIOutCommand), (8 bytes).
+    Removing lab7grader.o(.ARM.exidx.text.SetBit1), (8 bytes).
+    Removing lab7grader.o(.ARM.exidx.text.GradeSPIOutData), (8 bytes).
+    Removing lab7grader.o(.ARM.exidx.text.GradeIO_Init), (8 bytes).
+    Removing lab7grader.o(.text.Random32), (34 bytes).
+    Removing lab7grader.o(.ARM.exidx.text.Random32), (8 bytes).
+    Removing lab7grader.o(.text.Random6), (36 bytes).
+    Removing lab7grader.o(.ARM.exidx.text.Random6), (8 bytes).
+    Removing lab7grader.o(.text.Random), (46 bytes).
+    Removing lab7grader.o(.ARM.exidx.text.Random), (8 bytes).
+    Removing lab7grader.o(.ARM.exidx.text.GradeDec2String), (8 bytes).
+    Removing lab7grader.o(.ARM.exidx.text.GradeFix2String), (8 bytes).
+    Removing lab7grader.o(.text.setUpper), (16 bytes).
+    Removing lab7grader.o(.ARM.exidx.text.setUpper), (8 bytes).
+    Removing lab7grader.o(.ARM.exidx.text.TExaS_Init), (8 bytes).
+    Removing lab7grader.o(.text.TExaS_Stop), (44 bytes).
+    Removing lab7grader.o(.ARM.exidx.text.TExaS_Stop), (8 bytes).
+    Removing lab7grader.o(.bss.M6), (4 bytes).
+
+145 unused section(s) (total 6941 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    ../clib/microlib/string/memcmp.c         0x00000000   Number         0  memcmp.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
+    ../clib/microlib/string/strcmp.c         0x00000000   Number         0  strcmp.o ABSOLUTE
+    ..\inc\BusyWait.s                        0x00000000   Number         0  busywait.o ABSOLUTE
+    ..\inc\StringConversion.s                0x00000000   Number         0  stringconversion.o ABSOLUTE
+    IO.c                                     0x00000000   Number         0  io.o ABSOLUTE
+    Lab7Grader.c                             0x00000000   Number         0  lab7grader.o ABSOLUTE
+    Lab7GraderWrapper.s                      0x00000000   Number         0  lab7graderwrapper.o ABSOLUTE
+    Lab7Main.c                               0x00000000   Number         0  lab7main.o ABSOLUTE
+    PLL.c                                    0x00000000   Number         0  pll.o ABSOLUTE
+    ST7735.c                                 0x00000000   Number         0  st7735.o ABSOLUTE
+    Timer3A.c                                0x00000000   Number         0  timer3a.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    handlers.s                               0x00000000   Number         0  handlers.o ABSOLUTE
+    init.s                                   0x00000000   Number         0  init.o ABSOLUTE
+    startup.s                                0x00000000   Number         0  startup.o ABSOLUTE
+    RESET                                    0x00000000   Section      644  startup.o(RESET)
+    .ARM.Collect$$$$00000000                 0x00000284   Section        0  entry.o(.ARM.Collect$$$$00000000)
+    .ARM.Collect$$$$00000001                 0x00000284   Section        4  entry2.o(.ARM.Collect$$$$00000001)
+    .ARM.Collect$$$$00000004                 0x00000288   Section        4  entry5.o(.ARM.Collect$$$$00000004)
+    .ARM.Collect$$$$00000008                 0x0000028c   Section        0  entry7b.o(.ARM.Collect$$$$00000008)
+    .ARM.Collect$$$$0000000A                 0x0000028c   Section        0  entry8b.o(.ARM.Collect$$$$0000000A)
+    .ARM.Collect$$$$0000000B                 0x0000028c   Section        8  entry9a.o(.ARM.Collect$$$$0000000B)
+    __lit__00000000                          0x00000294   Data           4  entry2.o(.ARM.Collect$$$$00002712)
+    .ARM.Collect$$$$0000000D                 0x00000294   Section        0  entry10a.o(.ARM.Collect$$$$0000000D)
+    .ARM.Collect$$$$0000000F                 0x00000294   Section        0  entry11a.o(.ARM.Collect$$$$0000000F)
+    .ARM.Collect$$$$00002712                 0x00000294   Section        4  entry2.o(.ARM.Collect$$$$00002712)
+    .text                                    0x00000298   Section       28  startup.o(.text)
+    .text                                    0x000002b4   Section       64  busywait.o(.text)
+    .text                                    0x000002f4   Section      328  stringconversion.o(.text)
+    .text                                    0x0000043c   Section      816  lab7graderwrapper.o(.text)
+    .text                                    0x0000076c   Section        0  memcpya.o(.text)
+    .text                                    0x00000790   Section        0  strcmp.o(.text)
+    .text                                    0x000007ac   Section        0  memcmp.o(.text)
+    .text                                    0x000007c8   Section       36  init.o(.text)
+    [Anonymous Symbol]                       0x000007ec   Section        0  lab7grader.o(.text.ClearBit4)
+    [Anonymous Symbol]                       0x00000870   Section        0  lab7grader.o(.text.GradeDec2String)
+    [Anonymous Symbol]                       0x00000a60   Section        0  lab7grader.o(.text.GradeFix2String)
+    [Anonymous Symbol]                       0x00000c2c   Section        0  lab7grader.o(.text.GradeIO_Init)
+    [Anonymous Symbol]                       0x00000e20   Section        0  lab7grader.o(.text.GradeSPIOutCommand)
+    [Anonymous Symbol]                       0x00001018   Section        0  lab7grader.o(.text.GradeSPIOutData)
+    [Anonymous Symbol]                       0x00001210   Section        0  io.o(.text.IO_HeartBeat)
+    [Anonymous Symbol]                       0x00001224   Section        0  io.o(.text.IO_Init)
+    [Anonymous Symbol]                       0x00001260   Section        0  io.o(.text.IO_Touch)
+    [Anonymous Symbol]                       0x00001278   Section        0  lab7grader.o(.text.LogicAnalyzerA)
+    [Anonymous Symbol]                       0x00001294   Section        0  lab7grader.o(.text.LogicAnalyzerB)
+    [Anonymous Symbol]                       0x000012b0   Section        0  lab7grader.o(.text.LogicAnalyzerC)
+    [Anonymous Symbol]                       0x000012cc   Section        0  lab7grader.o(.text.LogicAnalyzerE)
+    [Anonymous Symbol]                       0x000012e8   Section        0  pll.o(.text.PLL_Init)
+    [Anonymous Symbol]                       0x00001354   Section        0  st7735.o(.text.ST7735_DrawBitmap)
+    [Anonymous Symbol]                       0x00001490   Section        0  st7735.o(.text.ST7735_DrawCharS)
+    [Anonymous Symbol]                       0x00001690   Section        0  st7735.o(.text.ST7735_FillRect)
+    [Anonymous Symbol]                       0x00001750   Section        0  st7735.o(.text.ST7735_FillScreen)
+    [Anonymous Symbol]                       0x00001794   Section        0  st7735.o(.text.ST7735_InitR)
+    [Anonymous Symbol]                       0x0000187c   Section        0  st7735.o(.text.ST7735_OutChar)
+    [Anonymous Symbol]                       0x0000199c   Section        0  st7735.o(.text.ST7735_OutFix)
+    [Anonymous Symbol]                       0x00001a74   Section        0  st7735.o(.text.ST7735_OutString)
+    [Anonymous Symbol]                       0x00001a90   Section        0  st7735.o(.text.ST7735_OutUDec)
+    [Anonymous Symbol]                       0x00001b68   Section        0  st7735.o(.text.ST7735_SetCursor)
+    [Anonymous Symbol]                       0x00001b88   Section        0  lab7grader.o(.text.Scope)
+    [Anonymous Symbol]                       0x00001ba0   Section        0  lab7grader.o(.text.SetBit1)
+    [Anonymous Symbol]                       0x00001c30   Section        0  lab7grader.o(.text.TExaS_Init)
+    [Anonymous Symbol]                       0x00002090   Section        0  lab7grader.o(.text.Timer5A_Handler)
+    [Anonymous Symbol]                       0x000020a8   Section        0  lab7grader.o(.text.UART0_OutUDec)
+    commandList                              0x000020e5   Thumb Code   156  st7735.o(.text.commandList)
+    [Anonymous Symbol]                       0x000020e4   Section        0  st7735.o(.text.commandList)
+    commonInit                               0x00002181   Thumb Code   428  st7735.o(.text.commonInit)
+    [Anonymous Symbol]                       0x00002180   Section        0  st7735.o(.text.commonInit)
+    [Anonymous Symbol]                       0x0000232c   Section        0  lab7main.o(.text.main)
+    setAddrWindow                            0x00002415   Thumb Code   214  st7735.o(.text.setAddrWindow)
+    [Anonymous Symbol]                       0x00002414   Section        0  st7735.o(.text.setAddrWindow)
+    i.Timer3A_Handler                        0x000024ec   Section        0  timer3a.o(i.Timer3A_Handler)
+    i.Timer3A_Init                           0x00002504   Section        0  timer3a.o(i.Timer3A_Init)
+    i.Timer3A_Stop                           0x00002564   Section        0  timer3a.o(i.Timer3A_Stop)
+    i.__scatterload_copy                     0x0000257c   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x0000258a   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x0000258c   Section       14  handlers.o(i.__scatterload_zeroinit)
+    .L__const.main.flowers                   0x0000259c   Data         880  lab7main.o(.rodata..L__const.main.flowers)
+    Font                                     0x0000290c   Data        1275  st7735.o(.rodata.Font)
+    [Anonymous Symbol]                       0x0000290c   Section        0  st7735.o(.rodata.Font)
+    Rcmd1                                    0x00006008   Data          59  st7735.o(.rodata.Rcmd1)
+    [Anonymous Symbol]                       0x00006008   Section        0  st7735.o(.rodata.Rcmd1)
+    Rcmd2green                               0x00006043   Data          13  st7735.o(.rodata.Rcmd2green)
+    [Anonymous Symbol]                       0x00006043   Section        0  st7735.o(.rodata.Rcmd2green)
+    Rcmd2red                                 0x00006050   Data          13  st7735.o(.rodata.Rcmd2red)
+    [Anonymous Symbol]                       0x00006050   Section        0  st7735.o(.rodata.Rcmd2red)
+    Rcmd3                                    0x0000605d   Data          43  st7735.o(.rodata.Rcmd3)
+    [Anonymous Symbol]                       0x0000605d   Section        0  st7735.o(.rodata.Rcmd3)
+    .L.str.7                                 0x000060c8   Data          29  lab7grader.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x000060c8   Section        0  lab7grader.o(.rodata.str1.1)
+    .L.str                                   0x000060e5   Data          37  lab7grader.o(.rodata.str1.1)
+    .L.str.14                                0x0000610a   Data          45  lab7grader.o(.rodata.str1.1)
+    .L.str.5                                 0x00006137   Data          20  lab7grader.o(.rodata.str1.1)
+    .L.str.4                                 0x0000614b   Data          17  lab7grader.o(.rodata.str1.1)
+    .L.str.13                                0x0000615c   Data          16  lab7grader.o(.rodata.str1.1)
+    .L.str.6                                 0x0000616c   Data          19  lab7grader.o(.rodata.str1.1)
+    .L.str.3                                 0x0000617f   Data          17  lab7grader.o(.rodata.str1.1)
+    .L.str.11                                0x00006190   Data          39  lab7grader.o(.rodata.str1.1)
+    .L.str.1                                 0x00006191   Data          38  lab7grader.o(.rodata.str1.1)
+    .L.str.8                                 0x000061b7   Data          45  lab7grader.o(.rodata.str1.1)
+    .L.str.29                                0x000061e4   Data          44  lab7grader.o(.rodata.str1.1)
+    .L.str.25                                0x00006210   Data          19  lab7grader.o(.rodata.str1.1)
+    .L.str.12                                0x00006223   Data          21  lab7grader.o(.rodata.str1.1)
+    .L.str.2                                 0x00006238   Data          24  lab7grader.o(.rodata.str1.1)
+    .L.str.20                                0x00006250   Data          21  lab7grader.o(.rodata.str1.1)
+    .L.str.24                                0x00006265   Data          21  lab7grader.o(.rodata.str1.1)
+    .L.str.15                                0x0000627a   Data          18  lab7grader.o(.rodata.str1.1)
+    .L.str.22                                0x0000628c   Data           8  lab7grader.o(.rodata.str1.1)
+    .L.str.21                                0x00006294   Data          14  lab7grader.o(.rodata.str1.1)
+    .L.str.26                                0x000062a2   Data           7  lab7grader.o(.rodata.str1.1)
+    .L.str.10                                0x000062a9   Data          35  lab7grader.o(.rodata.str1.1)
+    .L.str.23                                0x000062c3   Data           9  lab7grader.o(.rodata.str1.1)
+    .L.str.9                                 0x000062cc   Data          12  lab7grader.o(.rodata.str1.1)
+    .L.str.16                                0x000062d8   Data          33  lab7grader.o(.rodata.str1.1)
+    .L.str.18                                0x000062f9   Data          44  lab7grader.o(.rodata.str1.1)
+    .L.str.17                                0x00006325   Data          42  lab7grader.o(.rodata.str1.1)
+    .L.str.19                                0x0000634f   Data          48  lab7grader.o(.rodata.str1.1)
+    .L.str.27                                0x0000637f   Data           6  lab7grader.o(.rodata.str1.1)
+    .L.str.28                                0x00006385   Data           8  lab7grader.o(.rodata.str1.1)
+    .data                                    0x20000000   Section        4  timer3a.o(.data)
+    SaveSP                                   0x20000018   Data           4  lab7graderwrapper.o(data)
+    data                                     0x20000018   Section        4  lab7graderwrapper.o(data)
+    ColStart                                 0x20000020   Data           1  st7735.o(.bss.ColStart)
+    [Anonymous Symbol]                       0x20000020   Section        0  st7735.o(.bss.ColStart)
+    Fail                                     0x20000024   Data           4  lab7grader.o(.bss.Fail)
+    [Anonymous Symbol]                       0x20000024   Section        0  lab7grader.o(.bss.Fail)
+    RowStart                                 0x2000004c   Data           1  st7735.o(.bss.RowStart)
+    [Anonymous Symbol]                       0x2000004c   Section        0  st7735.o(.bss.RowStart)
+    Score                                    0x20000050   Data           4  lab7grader.o(.bss.Score)
+    [Anonymous Symbol]                       0x20000050   Section        0  lab7grader.o(.bss.Score)
+    TabColor                                 0x2000005c   Data           1  st7735.o(.bss.TabColor)
+    [Anonymous Symbol]                       0x2000005c   Section        0  st7735.o(.bss.TabColor)
+    _height                                  0x2000005e   Data           1  st7735.o(.bss._height)
+    [Anonymous Symbol]                       0x2000005e   Section        0  st7735.o(.bss._height)
+    _width                                   0x20000060   Data           1  st7735.o(.bss._width)
+    [Anonymous Symbol]                       0x20000060   Section        0  st7735.o(.bss._width)
+    StackMem                                 0x20000088   Data           0  startup.o(STACK)
+    STACK                                    0x20000088   Section     1024  startup.o(STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv4$E$P$D$K$B$S$7EM$PE$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$~IW$USESV6$~STKCKD$USESV7$~SHL$OTIME$EBA8$MICROLIB$REQ8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __Vectors                                0x00000000   Data           0  startup.o(RESET)
+    __cpp_initialize__aeabi_                  - Undefined Weak Reference
+    __cxa_finalize                            - Undefined Weak Reference
+    __decompress                              - Undefined Weak Reference
+    _clock_init                               - Undefined Weak Reference
+    _microlib_exit                            - Undefined Weak Reference
+    Reset_Handler                            0x0000026d   Thumb Code     0  startup.o(RESET)
+    NMI_Handler                              0x00000271   Thumb Code     2  startup.o(RESET)
+    HardFault_Handler                        0x00000273   Thumb Code     2  startup.o(RESET)
+    MemManage_Handler                        0x00000275   Thumb Code     2  startup.o(RESET)
+    BusFault_Handler                         0x00000277   Thumb Code     2  startup.o(RESET)
+    UsageFault_Handler                       0x00000279   Thumb Code     2  startup.o(RESET)
+    SVC_Handler                              0x0000027b   Thumb Code     2  startup.o(RESET)
+    DebugMon_Handler                         0x0000027d   Thumb Code     2  startup.o(RESET)
+    PendSV_Handler                           0x0000027f   Thumb Code     2  startup.o(RESET)
+    SysTick_Handler                          0x00000281   Thumb Code     2  startup.o(RESET)
+    ADC0Seq0_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    ADC0Seq1_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    ADC0Seq2_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    ADC0Seq3_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    ADC1Seq0_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    ADC1Seq1_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    ADC1Seq2_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    ADC1Seq3_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    CAN0_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    CAN1_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    CAN2_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    Comp0_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    Comp1_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    Comp2_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    Ethernet_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    ExtBus_Handler                           0x00000283   Thumb Code     0  startup.o(RESET)
+    FPU_Handler                              0x00000283   Thumb Code     0  startup.o(RESET)
+    Fan0_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    FlashCtl_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortA_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortB_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortC_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortD_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortE_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortF_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortG_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortH_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortJ_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortK_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortL_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortM_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortN_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortP1_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortP2_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortP3_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortP4_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortP5_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortP6_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortP7_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortP_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ1_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ2_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ3_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ4_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ5_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ6_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ7_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortR_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortS_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    Hibernate_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    I2C0_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    I2C1_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    I2C2_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    I2C3_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    I2C4_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    I2C5_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    I2S0_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    LPC0_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    PECI0_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM0Fault_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM0Generator0_Handler                   0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM0Generator1_Handler                   0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM0Generator2_Handler                   0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM0Generator3_Handler                   0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM1Fault_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM1Generator0_Handler                   0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM1Generator1_Handler                   0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM1Generator2_Handler                   0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM1Generator3_Handler                   0x00000283   Thumb Code     0  startup.o(RESET)
+    Quadrature0_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    Quadrature1_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    Quadrature2_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    SSI0_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    SSI1_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    SSI2_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    SSI3_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    SysCtl_Handler                           0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer0A_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer0B_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer1A_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer1B_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer2A_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer2B_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer3B_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer4A_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer4B_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer5B_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    UART0_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    UART1_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    UART2_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    UART3_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    UART4_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    UART5_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    UART6_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    UART7_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    USB0_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    WDT_Handler                              0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer0A_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer0B_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer1A_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer1B_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer2A_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer2B_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer3A_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer3B_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer4A_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer4B_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer5A_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer5B_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    uDMA_Error                               0x00000283   Thumb Code     0  startup.o(RESET)
+    uDMA_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    __main                                   0x00000285   Thumb Code     0  entry.o(.ARM.Collect$$$$00000000)
+    _main_stk                                0x00000285   Thumb Code     0  entry2.o(.ARM.Collect$$$$00000001)
+    _main_scatterload                        0x00000289   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    __main_after_scatterload                 0x0000028d   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    _main_clock                              0x0000028d   Thumb Code     0  entry7b.o(.ARM.Collect$$$$00000008)
+    _main_cpp_init                           0x0000028d   Thumb Code     0  entry8b.o(.ARM.Collect$$$$0000000A)
+    _main_init                               0x0000028d   Thumb Code     0  entry9a.o(.ARM.Collect$$$$0000000B)
+    __rt_final_cpp                           0x00000295   Thumb Code     0  entry10a.o(.ARM.Collect$$$$0000000D)
+    __rt_final_exit                          0x00000295   Thumb Code     0  entry11a.o(.ARM.Collect$$$$0000000F)
+    DisableInterrupts                        0x00000299   Thumb Code     0  startup.o(.text)
+    EnableInterrupts                         0x0000029d   Thumb Code     0  startup.o(.text)
+    StartCritical                            0x000002a1   Thumb Code     0  startup.o(.text)
+    EndCritical                              0x000002a9   Thumb Code     0  startup.o(.text)
+    WaitForInterrupt                         0x000002af   Thumb Code     0  startup.o(.text)
+    SPIOutCommand                            0x000002b5   Thumb Code     0  busywait.o(.text)
+    SPIOutData                               0x000002d9   Thumb Code     0  busywait.o(.text)
+    Dec2String                               0x000002f5   Thumb Code     0  stringconversion.o(.text)
+    Fix2String                               0x0000034f   Thumb Code     0  stringconversion.o(.text)
+    testSPIOutCommand                        0x0000043d   Thumb Code     0  lab7graderwrapper.o(.text)
+    testSPIOutData                           0x000004b9   Thumb Code     0  lab7graderwrapper.o(.text)
+    testDec2String                           0x00000535   Thumb Code     0  lab7graderwrapper.o(.text)
+    myDec2String                             0x000005b1   Thumb Code     0  lab7graderwrapper.o(.text)
+    testFix2String                           0x0000062d   Thumb Code     0  lab7graderwrapper.o(.text)
+    myFix2String                             0x000006a9   Thumb Code     0  lab7graderwrapper.o(.text)
+    __aeabi_memcpy                           0x0000076d   Thumb Code    36  memcpya.o(.text)
+    __aeabi_memcpy4                          0x0000076d   Thumb Code     0  memcpya.o(.text)
+    __aeabi_memcpy8                          0x0000076d   Thumb Code     0  memcpya.o(.text)
+    strcmp                                   0x00000791   Thumb Code    28  strcmp.o(.text)
+    memcmp                                   0x000007ad   Thumb Code    26  memcmp.o(.text)
+    __scatterload                            0x000007c9   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x000007c9   Thumb Code     0  init.o(.text)
+    ClearBit4                                0x000007ed   Thumb Code   130  lab7grader.o(.text.ClearBit4)
+    GradeDec2String                          0x00000871   Thumb Code   496  lab7grader.o(.text.GradeDec2String)
+    GradeFix2String                          0x00000a61   Thumb Code   460  lab7grader.o(.text.GradeFix2String)
+    GradeIO_Init                             0x00000c2d   Thumb Code   500  lab7grader.o(.text.GradeIO_Init)
+    GradeSPIOutCommand                       0x00000e21   Thumb Code   504  lab7grader.o(.text.GradeSPIOutCommand)
+    GradeSPIOutData                          0x00001019   Thumb Code   504  lab7grader.o(.text.GradeSPIOutData)
+    IO_HeartBeat                             0x00001211   Thumb Code    18  io.o(.text.IO_HeartBeat)
+    IO_Init                                  0x00001225   Thumb Code    58  io.o(.text.IO_Init)
+    IO_Touch                                 0x00001261   Thumb Code    24  io.o(.text.IO_Touch)
+    LogicAnalyzerA                           0x00001279   Thumb Code    28  lab7grader.o(.text.LogicAnalyzerA)
+    LogicAnalyzerB                           0x00001295   Thumb Code    26  lab7grader.o(.text.LogicAnalyzerB)
+    LogicAnalyzerC                           0x000012b1   Thumb Code    28  lab7grader.o(.text.LogicAnalyzerC)
+    LogicAnalyzerE                           0x000012cd   Thumb Code    26  lab7grader.o(.text.LogicAnalyzerE)
+    PLL_Init                                 0x000012e9   Thumb Code   106  pll.o(.text.PLL_Init)
+    ST7735_DrawBitmap                        0x00001355   Thumb Code   314  st7735.o(.text.ST7735_DrawBitmap)
+    ST7735_DrawCharS                         0x00001491   Thumb Code   510  st7735.o(.text.ST7735_DrawCharS)
+    ST7735_FillRect                          0x00001691   Thumb Code   190  st7735.o(.text.ST7735_FillRect)
+    ST7735_FillScreen                        0x00001751   Thumb Code    68  st7735.o(.text.ST7735_FillScreen)
+    ST7735_InitR                             0x00001795   Thumb Code   230  st7735.o(.text.ST7735_InitR)
+    ST7735_OutChar                           0x0000187d   Thumb Code   264  st7735.o(.text.ST7735_OutChar)
+    ST7735_OutFix                            0x0000199d   Thumb Code   216  st7735.o(.text.ST7735_OutFix)
+    ST7735_OutString                         0x00001a75   Thumb Code    28  st7735.o(.text.ST7735_OutString)
+    ST7735_OutUDec                           0x00001a91   Thumb Code   216  st7735.o(.text.ST7735_OutUDec)
+    ST7735_SetCursor                         0x00001b69   Thumb Code    32  st7735.o(.text.ST7735_SetCursor)
+    Scope                                    0x00001b89   Thumb Code    24  lab7grader.o(.text.Scope)
+    SetBit1                                  0x00001ba1   Thumb Code   142  lab7grader.o(.text.SetBit1)
+    TExaS_Init                               0x00001c31   Thumb Code  1120  lab7grader.o(.text.TExaS_Init)
+    Timer5A_Handler                          0x00002091   Thumb Code    24  lab7grader.o(.text.Timer5A_Handler)
+    UART0_OutUDec                            0x000020a9   Thumb Code    58  lab7grader.o(.text.UART0_OutUDec)
+    main                                     0x0000232d   Thumb Code   184  lab7main.o(.text.main)
+    Timer3A_Handler                          0x000024ed   Thumb Code    16  timer3a.o(i.Timer3A_Handler)
+    Timer3A_Init                             0x00002505   Thumb Code    74  timer3a.o(i.Timer3A_Init)
+    Timer3A_Stop                             0x00002565   Thumb Code    14  timer3a.o(i.Timer3A_Stop)
+    __scatterload_copy                       0x0000257d   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x0000258b   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x0000258d   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    Logo                                     0x00002e08   Data       12800  lab7main.o(.rodata.Logo)
+    TestData                                 0x00006088   Data          64  lab7main.o(.rodata.TestData)
+    Region$$Table$$Base                      0x00006390   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x000063b0   Number         0  anon$$obj.o(Region$$Table)
+    PeriodicTask3                            0x20000000   Data           4  timer3a.o(.data)
+    EID1                                     0x20000004   Data           9  lab7main.o(.data.EID1)
+    EID2                                     0x2000000d   Data           8  lab7main.o(.data.EID2)
+    StTextColor                              0x20000016   Data           2  st7735.o(.data.StTextColor)
+    GraderData                               0x20000028   Data           4  lab7grader.o(.bss.GraderData)
+    GraderGPIO                               0x2000002c   Data           4  lab7grader.o(.bss.GraderGPIO)
+    GraderStatus                             0x20000030   Data           4  lab7grader.o(.bss.GraderStatus)
+    GraderTime                               0x20000034   Data           4  lab7grader.o(.bss.GraderTime)
+    M                                        0x20000038   Data           4  lab7grader.o(.bss.M)
+    Message                                  0x2000003c   Data          12  st7735.o(.bss.Message)
+    PeriodicTask2                            0x20000048   Data           4  lab7grader.o(.bss.PeriodicTask2)
+    StX                                      0x20000054   Data           4  st7735.o(.bss.StX)
+    StY                                      0x20000058   Data           4  st7735.o(.bss.StY)
+    myMessage                                0x20000061   Data          16  lab7grader.o(.bss.myMessage)
+    yourMessage                              0x20000071   Data          16  lab7grader.o(.bss.yourMessage)
+    __initial_sp                             0x20000488   Data           0  startup.o(STACK)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x0000026d
+
+  Load Region LR_1 (Base: 0x00000000, Size: 0x000063cc, Max: 0xffffffff, ABSOLUTE)
+
+    Execution Region ER_RO (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x000063b0, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000000   0x00000000   0x00000284   Code   RO            3  * RESET               startup.o
+    0x00000284   0x00000284   0x00000000   Code   RO          296  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x00000284   0x00000284   0x00000004   Code   RO          307    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x00000288   0x00000288   0x00000004   Code   RO          310    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x0000028c   0x0000028c   0x00000000   Code   RO          312    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x0000028c   0x0000028c   0x00000000   Code   RO          314    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x0000028c   0x0000028c   0x00000008   Code   RO          315    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x00000294   0x00000294   0x00000000   Code   RO          317    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x00000294   0x00000294   0x00000000   Code   RO          319    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x00000294   0x00000294   0x00000004   Code   RO          308    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x00000298   0x00000298   0x0000001c   Code   RO            4    .text               startup.o
+    0x000002b4   0x000002b4   0x00000040   Code   RO           29    .text               busywait.o
+    0x000002f4   0x000002f4   0x00000148   Code   RO           32    .text               stringconversion.o
+    0x0000043c   0x0000043c   0x00000330   Code   RO          293    .text               lab7graderwrapper.o
+    0x0000076c   0x0000076c   0x00000024   Code   RO          299    .text               mc_w.l(memcpya.o)
+    0x00000790   0x00000790   0x0000001c   Code   RO          301    .text               mc_w.l(strcmp.o)
+    0x000007ac   0x000007ac   0x0000001a   Code   RO          303    .text               mc_w.l(memcmp.o)
+    0x000007c6   0x000007c6   0x00000002   PAD
+    0x000007c8   0x000007c8   0x00000024   Code   RO          321    .text               mc_w.l(init.o)
+    0x000007ec   0x000007ec   0x00000082   Code   RO          247    .text.ClearBit4     lab7grader.o
+    0x0000086e   0x0000086e   0x00000002   PAD
+    0x00000870   0x00000870   0x000001f0   Code   RO          263    .text.GradeDec2String  lab7grader.o
+    0x00000a60   0x00000a60   0x000001cc   Code   RO          265    .text.GradeFix2String  lab7grader.o
+    0x00000c2c   0x00000c2c   0x000001f4   Code   RO          255    .text.GradeIO_Init  lab7grader.o
+    0x00000e20   0x00000e20   0x000001f8   Code   RO          249    .text.GradeSPIOutCommand  lab7grader.o
+    0x00001018   0x00001018   0x000001f8   Code   RO          253    .text.GradeSPIOutData  lab7grader.o
+    0x00001210   0x00001210   0x00000012   Code   RO           38    .text.IO_HeartBeat  io.o
+    0x00001222   0x00001222   0x00000002   PAD
+    0x00001224   0x00001224   0x0000003a   Code   RO           36    .text.IO_Init       io.o
+    0x0000125e   0x0000125e   0x00000002   PAD
+    0x00001260   0x00001260   0x00000018   Code   RO           40    .text.IO_Touch      io.o
+    0x00001278   0x00001278   0x0000001c   Code   RO          219    .text.LogicAnalyzerA  lab7grader.o
+    0x00001294   0x00001294   0x0000001a   Code   RO          221    .text.LogicAnalyzerB  lab7grader.o
+    0x000012ae   0x000012ae   0x00000002   PAD
+    0x000012b0   0x000012b0   0x0000001c   Code   RO          223    .text.LogicAnalyzerC  lab7grader.o
+    0x000012cc   0x000012cc   0x0000001a   Code   RO          225    .text.LogicAnalyzerE  lab7grader.o
+    0x000012e6   0x000012e6   0x00000002   PAD
+    0x000012e8   0x000012e8   0x0000006a   Code   RO          174    .text.PLL_Init      pll.o
+    0x00001352   0x00001352   0x00000002   PAD
+    0x00001354   0x00001354   0x0000013a   Code   RO           88    .text.ST7735_DrawBitmap  st7735.o
+    0x0000148e   0x0000148e   0x00000002   PAD
+    0x00001490   0x00001490   0x000001fe   Code   RO           90    .text.ST7735_DrawCharS  st7735.o
+    0x0000168e   0x0000168e   0x00000002   PAD
+    0x00001690   0x00001690   0x000000be   Code   RO           78    .text.ST7735_FillRect  st7735.o
+    0x0000174e   0x0000174e   0x00000002   PAD
+    0x00001750   0x00001750   0x00000044   Code   RO           64    .text.ST7735_FillScreen  st7735.o
+    0x00001794   0x00001794   0x000000e6   Code   RO           66    .text.ST7735_InitR  st7735.o
+    0x0000187a   0x0000187a   0x00000002   PAD
+    0x0000187c   0x0000187c   0x00000120   Code   RO          120    .text.ST7735_OutChar  st7735.o
+    0x0000199c   0x0000199c   0x000000d8   Code   RO           98    .text.ST7735_OutFix  st7735.o
+    0x00001a74   0x00001a74   0x0000001c   Code   RO          122    .text.ST7735_OutString  st7735.o
+    0x00001a90   0x00001a90   0x000000d8   Code   RO           96    .text.ST7735_OutUDec  st7735.o
+    0x00001b68   0x00001b68   0x00000020   Code   RO           62    .text.ST7735_SetCursor  st7735.o
+    0x00001b88   0x00001b88   0x00000018   Code   RO          217    .text.Scope         lab7grader.o
+    0x00001ba0   0x00001ba0   0x0000008e   Code   RO          251    .text.SetBit1       lab7grader.o
+    0x00001c2e   0x00001c2e   0x00000002   PAD
+    0x00001c30   0x00001c30   0x00000460   Code   RO          269    .text.TExaS_Init    lab7grader.o
+    0x00002090   0x00002090   0x00000018   Code   RO          229    .text.Timer5A_Handler  lab7grader.o
+    0x000020a8   0x000020a8   0x0000003a   Code   RO          241    .text.UART0_OutUDec  lab7grader.o
+    0x000020e2   0x000020e2   0x00000002   PAD
+    0x000020e4   0x000020e4   0x0000009c   Code   RO           68    .text.commandList   st7735.o
+    0x00002180   0x00002180   0x000001ac   Code   RO           60    .text.commonInit    st7735.o
+    0x0000232c   0x0000232c   0x000000e8   Code   RO           13    .text.main          lab7main.o
+    0x00002414   0x00002414   0x000000d6   Code   RO           72    .text.setAddrWindow  st7735.o
+    0x000024ea   0x000024ea   0x00000002   PAD
+    0x000024ec   0x000024ec   0x00000018   Code   RO          182    i.Timer3A_Handler   timer3a.o
+    0x00002504   0x00002504   0x00000060   Code   RO          183    i.Timer3A_Init      timer3a.o
+    0x00002564   0x00002564   0x00000018   Code   RO          184    i.Timer3A_Stop      timer3a.o
+    0x0000257c   0x0000257c   0x0000000e   Code   RO          325    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x0000258a   0x0000258a   0x00000002   Code   RO          326    i.__scatterload_null  mc_w.l(handlers.o)
+    0x0000258c   0x0000258c   0x0000000e   Code   RO          327    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x0000259a   0x0000259a   0x00000002   PAD
+    0x0000259c   0x0000259c   0x00000370   Data   RO           19    .rodata..L__const.main.flowers  lab7main.o
+    0x0000290c   0x0000290c   0x000004fb   Data   RO          157    .rodata.Font        st7735.o
+    0x00002e07   0x00002e07   0x00000001   PAD
+    0x00002e08   0x00002e08   0x00003200   Data   RO           15    .rodata.Logo        lab7main.o
+    0x00006008   0x00006008   0x0000003b   Data   RO          146    .rodata.Rcmd1       st7735.o
+    0x00006043   0x00006043   0x0000000d   Data   RO          147    .rodata.Rcmd2green  st7735.o
+    0x00006050   0x00006050   0x0000000d   Data   RO          150    .rodata.Rcmd2red    st7735.o
+    0x0000605d   0x0000605d   0x0000002b   Data   RO          151    .rodata.Rcmd3       st7735.o
+    0x00006088   0x00006088   0x00000040   Data   RO           18    .rodata.TestData    lab7main.o
+    0x000060c8   0x000060c8   0x000002c5   Data   RO          277    .rodata.str1.1      lab7grader.o
+    0x0000638d   0x0000638d   0x00000003   PAD
+    0x00006390   0x00006390   0x00000020   Data   RO          324    Region$$Table       anon$$obj.o
+
+
+    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x000063b0, Size: 0x0000001c, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000000   0x000063b0   0x00000004   Data   RW          185    .data               timer3a.o
+    0x20000004   0x000063b4   0x00000009   Data   RW           16    .data.EID1          lab7main.o
+    0x2000000d   0x000063bd   0x00000008   Data   RW           17    .data.EID2          lab7main.o
+    0x20000015   0x000063c5   0x00000001   PAD
+    0x20000016   0x000063c6   0x00000002   Data   RW          144    .data.StTextColor   st7735.o
+    0x20000018   0x000063c8   0x00000004   Data   RW          292    data                lab7graderwrapper.o
+
+
+    Execution Region ER_ZI (Exec base: 0x20000020, Load base: 0x000063cc, Size: 0x00000468, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000020        -       0x00000001   Zero   RW          148    .bss.ColStart       st7735.o
+    0x20000021   0x000063cc   0x00000003   PAD
+    0x20000024        -       0x00000004   Zero   RW          276    .bss.Fail           lab7grader.o
+    0x20000028        -       0x00000004   Zero   RW          279    .bss.GraderData     lab7grader.o
+    0x2000002c        -       0x00000004   Zero   RW          278    .bss.GraderGPIO     lab7grader.o
+    0x20000030        -       0x00000004   Zero   RW          275    .bss.GraderStatus   lab7grader.o
+    0x20000034        -       0x00000004   Zero   RW          274    .bss.GraderTime     lab7grader.o
+    0x20000038        -       0x00000004   Zero   RW          281    .bss.M              lab7grader.o
+    0x2000003c        -       0x0000000c   Zero   RW          158    .bss.Message        st7735.o
+    0x20000048        -       0x00000004   Zero   RW          273    .bss.PeriodicTask2  lab7grader.o
+    0x2000004c        -       0x00000001   Zero   RW          149    .bss.RowStart       st7735.o
+    0x2000004d   0x000063cc   0x00000003   PAD
+    0x20000050        -       0x00000004   Zero   RW          280    .bss.Score          lab7grader.o
+    0x20000054        -       0x00000004   Zero   RW          142    .bss.StX            st7735.o
+    0x20000058        -       0x00000004   Zero   RW          143    .bss.StY            st7735.o
+    0x2000005c        -       0x00000001   Zero   RW          152    .bss.TabColor       st7735.o
+    0x2000005d   0x000063cc   0x00000001   PAD
+    0x2000005e        -       0x00000001   Zero   RW          154    .bss._height        st7735.o
+    0x2000005f   0x000063cc   0x00000001   PAD
+    0x20000060        -       0x00000001   Zero   RW          153    .bss._width         st7735.o
+    0x20000061        -       0x00000010   Zero   RW          284    .bss.myMessage      lab7grader.o
+    0x20000071        -       0x00000010   Zero   RW          283    .bss.yourMessage    lab7grader.o
+    0x20000081   0x000063cc   0x00000007   PAD
+    0x20000088        -       0x00000400   Zero   RW            1    STACK               startup.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+        64          2          0          0          0        252   busywait.o
+       100          0          0          0          0       1001   io.o
+      4070          6        709          0         64      14005   lab7grader.o
+       816          6          0          4          0        508   lab7graderwrapper.o
+       232         48      13744         17          0       1415   lab7main.o
+       106          0          0          0          0        584   pll.o
+      2890         24       1403          2         25      24460   st7735.o
+       672        622          0          0       1024        948   startup.o
+       328          0          0          0          0        356   stringconversion.o
+       144         40          0          4          0       6484   timer3a.o
+
+    ----------------------------------------------------------------------
+      9448        748      15892         28       1128      50013   Object Totals
+         0          0         32          0          0          0   (incl. Generated)
+        26          0          4          1         15          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+         0          0          0          0          0          0   entry.o
+         0          0          0          0          0          0   entry10a.o
+         0          0          0          0          0          0   entry11a.o
+         8          4          0          0          0          0   entry2.o
+         4          0          0          0          0          0   entry5.o
+         0          0          0          0          0          0   entry7b.o
+         0          0          0          0          0          0   entry8b.o
+         8          4          0          0          0          0   entry9a.o
+        30          0          0          0          0          0   handlers.o
+        36          8          0          0          0         68   init.o
+        26          0          0          0          0         80   memcmp.o
+        36          0          0          0          0         68   memcpya.o
+        28          0          0          0          0         76   strcmp.o
+
+    ----------------------------------------------------------------------
+       180         16          0          0          0        292   Library Totals
+         4          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+       176         16          0          0          0        292   mc_w.l
+
+    ----------------------------------------------------------------------
+       180         16          0          0          0        292   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+      9628        764      15892         28       1128      50221   Grand Totals
+      9628        764      15892         28       1128      50221   ELF Image Totals
+      9628        764      15892         28          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                25520 (  24.92kB)
+    Total RW  Size (RW Data + ZI Data)              1156 (   1.13kB)
+    Total ROM Size (Code + RO Data + RW Data)      25548 (  24.95kB)
+
+==============================================================================
+

@@ -1,0 +1,82 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;Software delay functions
+    2 00000000         ; Your name
+    3 00000000         ; Date last modified
+    4 00000000                 AREA             |.text|, CODE, READONLY, ALIGN=
+2
+    5 00000000                 THUMB
+    6 00000000                 EXPORT           Delay
+    7 00000000         ;*********Delay**********************
+    8 00000000         ; Software delay loop
+    9 00000000         ; Input: R0 is count, the amount to delay in 100ns
+   10 00000000         ; Output: none
+   11 00000000                 ALIGN            8
+   12 00000000 BF00    Delay   NOP                          ;dummy operation
+   13 00000002 BF00            NOP
+   14 00000004 BF00            NOP
+   15 00000006 BF00            NOP
+   16 00000008 1E40            SUBS             R0,R0,#1
+   17 0000000A D1FE            BNE              Delay
+   18 0000000C 4770            BX               LR
+   19 0000000E         
+   20 0000000E                 EXPORT           Wait10ms
+   21 0000000E         ;*********Wait10ms**********************
+   22 0000000E         ; Software delay loop
+   23 0000000E         ; Input: R0 is count, the amount to delay in 10ms
+   24 0000000E         ; Output: none
+   25 0000000E         Wait10ms
+   26 0000000E         ; implement this using AAPCS
+   27 0000000E BF00            NOP
+   28 00000010 BF00            NOP
+   29 00000012 BF00            NOP
+   30 00000014 BF00            NOP
+   31 00000016 1E40            SUBS             R0, R0, #1
+   32 00000018 D1FE            BNE              Delay
+   33 0000001A 4770            BX               LR
+   34 0000001C                 END
+Command Line: --debug --xref --diag_suppress=9931,A1950W --cpu=Cortex-M4 --fpu=
+SoftVFP --depend=.\delay.d -o.\delay.o -I.\RTE\_Lab5 -IC:\Users\aryaa\AppData\L
+ocal\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include -IC:\Users\aryaa\AppData\Loca
+l\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123 --predefine="__EVAL SETA
+ 1" --predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 538" --
+predefine="_RTE_ SETA 1" --predefine="TM4C123GH6PM SETA 1" --predefine="_RTE_ S
+ETA 1" --list=.\delay.lst delay.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+.text 00000000
+
+Symbol: .text
+   Definitions
+      At line 4 in file delay.s
+   Uses
+      None
+Comment: .text unused
+Delay 00000000
+
+Symbol: Delay
+   Definitions
+      At line 12 in file delay.s
+   Uses
+      At line 6 in file delay.s
+      At line 17 in file delay.s
+      At line 32 in file delay.s
+
+Wait10ms 0000000E
+
+Symbol: Wait10ms
+   Definitions
+      At line 25 in file delay.s
+   Uses
+      At line 20 in file delay.s
+Comment: Wait10ms used once
+3 symbols
+338 symbols in table

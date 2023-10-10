@@ -1,0 +1,694 @@
+Component: Arm Compiler for Embedded 6.19 Tool: armlink [5e73cb00]
+
+==============================================================================
+
+Section Cross References
+
+    startup.o(RESET) refers to startup.o(STACK) for StackMem
+    startup.o(RESET) refers to uart.o(.text) for UART0_Handler
+    startup.o(RESET) refers to timer3a.o(i.Timer3A_Handler) for Timer3A_Handler
+    startup.o(RESET) refers to lab5grader.o(.text.Timer5A_Handler) for Timer5A_Handler
+    startup.o(RESET) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    lab5.o(.ARM.exidx.text.PortE_Init) refers to lab5.o(.text.PortE_Init) for [Anonymous Symbol]
+    lab5.o(.ARM.exidx.text.PortF_Init) refers to lab5.o(.text.PortF_Init) for [Anonymous Symbol]
+    lab5.o(.ARM.exidx.text.PortA_Init) refers to lab5.o(.text.PortA_Init) for [Anonymous Symbol]
+    lab5.o(.text.main) refers to startup.o(.text) for DisableInterrupts
+    lab5.o(.text.main) refers to lab5grader.o(.text.TExaS_Init) for TExaS_Init
+    lab5.o(.text.main) refers to lab5.o(.bss.currentState) for currentState
+    lab5.o(.text.main) refers to lab5.o(.rodata.FSM) for FSM
+    lab5.o(.text.main) refers to lab5.o(.bss.Input) for Input
+    lab5.o(.text.main) refers to delay.o(.text) for Wait10ms
+    lab5.o(.ARM.exidx.text.main) refers to lab5.o(.text.main) for [Anonymous Symbol]
+    uart.o(.text) refers to startup.o(.text) for StartCritical
+    uart.o(.text) refers to uart.o(.data) for RxGetI
+    uart.o(.text) refers to uart.o(.bss) for RxFifo
+    timer3a.o(i.Timer3A_Handler) refers to timer3a.o(.data) for PeriodicTask3
+    timer3a.o(i.Timer3A_Init) refers to timer3a.o(.data) for PeriodicTask3
+    lab5grader.o(.ARM.exidx.text.Scope) refers to lab5grader.o(.text.Scope) for [Anonymous Symbol]
+    lab5grader.o(.ARM.exidx.text.LogicAnalyzerA) refers to lab5grader.o(.text.LogicAnalyzerA) for [Anonymous Symbol]
+    lab5grader.o(.ARM.exidx.text.LogicAnalyzerB) refers to lab5grader.o(.text.LogicAnalyzerB) for [Anonymous Symbol]
+    lab5grader.o(.ARM.exidx.text.LogicAnalyzerC) refers to lab5grader.o(.text.LogicAnalyzerC) for [Anonymous Symbol]
+    lab5grader.o(.ARM.exidx.text.LogicAnalyzerE) refers to lab5grader.o(.text.LogicAnalyzerE) for [Anonymous Symbol]
+    lab5grader.o(.text.PeriodicTask2_Init) refers to lab5grader.o(.bss.PeriodicTask2) for PeriodicTask2
+    lab5grader.o(.ARM.exidx.text.PeriodicTask2_Init) refers to lab5grader.o(.text.PeriodicTask2_Init) for [Anonymous Symbol]
+    lab5grader.o(.text.Timer5A_Handler) refers to lab5grader.o(.bss.PeriodicTask2) for PeriodicTask2
+    lab5grader.o(.ARM.exidx.text.Timer5A_Handler) refers to lab5grader.o(.text.Timer5A_Handler) for [Anonymous Symbol]
+    lab5grader.o(.ARM.exidx.text.PeriodicTask2_Stop) refers to lab5grader.o(.text.PeriodicTask2_Stop) for [Anonymous Symbol]
+    lab5grader.o(.ARM.exidx.text.UART0_Init) refers to lab5grader.o(.text.UART0_Init) for [Anonymous Symbol]
+    lab5grader.o(.ARM.exidx.text.UART0_InChar) refers to lab5grader.o(.text.UART0_InChar) for [Anonymous Symbol]
+    lab5grader.o(.ARM.exidx.text.UART0_OutChar) refers to lab5grader.o(.text.UART0_OutChar) for [Anonymous Symbol]
+    lab5grader.o(.ARM.exidx.text.UART0_OutString) refers to lab5grader.o(.text.UART0_OutString) for [Anonymous Symbol]
+    lab5grader.o(.ARM.exidx.text.OutCRLF0) refers to lab5grader.o(.text.OutCRLF0) for [Anonymous Symbol]
+    lab5grader.o(.ARM.exidx.text.ADC1_Init) refers to lab5grader.o(.text.ADC1_Init) for [Anonymous Symbol]
+    lab5grader.o(.text.OutPortProblem) refers to lab5grader.o(.data.PortMode) for PortMode
+    lab5grader.o(.text.OutPortProblem) refers to lab5grader.o(.rodata.PortProblem) for PortProblem
+    lab5grader.o(.ARM.exidx.text.OutPortProblem) refers to lab5grader.o(.text.OutPortProblem) for [Anonymous Symbol]
+    lab5grader.o(.text.CheckClock) refers to lab5grader.o(.data.PortMode) for PortMode
+    lab5grader.o(.text.CheckClock) refers to lab5grader.o(.rodata.ports) for ports
+    lab5grader.o(.text.CheckClock) refers to lab5grader.o(.bss.Fail) for Fail
+    lab5grader.o(.ARM.exidx.text.CheckClock) refers to lab5grader.o(.text.CheckClock) for [Anonymous Symbol]
+    lab5grader.o(.text.CheckInitialization) refers to uart.o(.text) for UART_OutString
+    lab5grader.o(.text.CheckInitialization) refers to lab5grader.o(.data.PortMode) for PortMode
+    lab5grader.o(.text.CheckInitialization) refers to lab5grader.o(.rodata.ports) for ports
+    lab5grader.o(.text.CheckInitialization) refers to lab5grader.o(.bss.Fail) for Fail
+    lab5grader.o(.text.CheckInitialization) refers to lab5grader.o(.rodata.str1.1) for .L.str.4
+    lab5grader.o(.text.CheckInitialization) refers to lab5grader.o(.bss.Score) for Score
+    lab5grader.o(.ARM.exidx.text.CheckInitialization) refers to lab5grader.o(.text.CheckInitialization) for [Anonymous Symbol]
+    lab5grader.o(.text.ReadInput) refers to lab5grader.o(.data.PortMode) for PortMode
+    lab5grader.o(.text.ReadInput) refers to lab5grader.o(.rodata.ports) for ports
+    lab5grader.o(.text.ReadInput) refers to lab5grader.o(.bss.Fail) for Fail
+    lab5grader.o(.text.ReadInput) refers to lab5grader.o(.rodata.str1.1) for .L.str.1
+    lab5grader.o(.text.ReadInput) refers to uart.o(.text) for UART_OutString
+    lab5grader.o(.ARM.exidx.text.ReadInput) refers to lab5grader.o(.text.ReadInput) for [Anonymous Symbol]
+    lab5grader.o(.text.ReadOutput) refers to lab5grader.o(.data.PortMode) for PortMode
+    lab5grader.o(.text.ReadOutput) refers to lab5grader.o(.rodata.ports) for ports
+    lab5grader.o(.text.ReadOutput) refers to lab5grader.o(.bss.Fail) for Fail
+    lab5grader.o(.text.ReadOutput) refers to lab5grader.o(.rodata.str1.1) for .L.str.1
+    lab5grader.o(.text.ReadOutput) refers to uart.o(.text) for UART_OutString
+    lab5grader.o(.ARM.exidx.text.ReadOutput) refers to lab5grader.o(.text.ReadOutput) for [Anonymous Symbol]
+    lab5grader.o(.text.GetState) refers to lab5grader.o(.rodata.validPatterns) for validPatterns
+    lab5grader.o(.text.GetState) refers to lab5grader.o(.rodata.str1.1) for .L.str.8
+    lab5grader.o(.text.GetState) refers to uart.o(.text) for UART_OutString
+    lab5grader.o(.text.GetState) refers to lab5grader.o(.bss.Fail) for Fail
+    lab5grader.o(.ARM.exidx.text.GetState) refers to lab5grader.o(.text.GetState) for [Anonymous Symbol]
+    lab5grader.o(.text.Random32) refers to lab5grader.o(.bss.M) for M
+    lab5grader.o(.ARM.exidx.text.Random32) refers to lab5grader.o(.text.Random32) for [Anonymous Symbol]
+    lab5grader.o(.text.Random6) refers to lab5grader.o(.bss.M6) for M6
+    lab5grader.o(.ARM.exidx.text.Random6) refers to lab5grader.o(.text.Random6) for [Anonymous Symbol]
+    lab5grader.o(.text.Random) refers to lab5grader.o(.bss.M) for M
+    lab5grader.o(.ARM.exidx.text.Random) refers to lab5grader.o(.text.Random) for [Anonymous Symbol]
+    lab5grader.o(.ARM.exidx.text.setUpper) refers to lab5grader.o(.text.setUpper) for [Anonymous Symbol]
+    lab5grader.o(.text.OutCRLF) refers to uart.o(.text) for UART_OutChar
+    lab5grader.o(.ARM.exidx.text.OutCRLF) refers to lab5grader.o(.text.OutCRLF) for [Anonymous Symbol]
+    lab5grader.o(.text.Lab5Grader) refers to lab5grader.o(.bss.Fail) for Fail
+    lab5grader.o(.text.Lab5Grader) refers to uart.o(.text) for UART_OutString
+    lab5grader.o(.text.Lab5Grader) refers to lab5grader.o(.bss.Score) for Score
+    lab5grader.o(.text.Lab5Grader) refers to timer3a.o(i.Timer3A_Stop) for Timer3A_Stop
+    lab5grader.o(.text.Lab5Grader) refers to lab5grader.o(.bss.Time) for Time
+    lab5grader.o(.text.Lab5Grader) refers to lab5grader.o(.text.CheckInitialization) for CheckInitialization
+    lab5grader.o(.text.Lab5Grader) refers to lab5grader.o(.data.PortMode) for PortMode
+    lab5grader.o(.text.Lab5Grader) refers to lab5grader.o(.rodata.ports) for ports
+    lab5grader.o(.text.Lab5Grader) refers to lab5grader.o(.rodata.str1.1) for .L.str.1
+    lab5grader.o(.text.Lab5Grader) refers to lab5grader.o(.bss.LastIn) for LastIn
+    lab5grader.o(.text.Lab5Grader) refers to lab5grader.o(.bss.LastOut) for LastOut
+    lab5grader.o(.text.Lab5Grader) refers to lab5grader.o(.rodata.validPatterns) for validPatterns
+    lab5grader.o(.text.Lab5Grader) refers to lab5grader.o(.bss.LookingFlag) for LookingFlag
+    lab5grader.o(.text.Lab5Grader) refers to lab5grader.o(.bss.PatternMode) for PatternMode
+    lab5grader.o(.text.Lab5Grader) refers to lab5grader.o(.bss.LookingFor) for LookingFor
+    lab5grader.o(.text.Lab5Grader) refers to lab5grader.o(.rodata.Patterns) for Patterns
+    lab5grader.o(.text.Lab5Grader) refers to lab5grader.o(.bss.NeedState) for NeedState
+    lab5grader.o(.text.Lab5Grader) refers to lab5grader.o(.rodata.pat) for pat
+    lab5grader.o(.text.Lab5Grader) refers to lab5grader.o(.bss.WrongState) for WrongState
+    lab5grader.o(.text.Lab5Grader) refers to lab5grader.o(.bss.LastState) for LastState
+    lab5grader.o(.ARM.exidx.text.Lab5Grader) refers to lab5grader.o(.text.Lab5Grader) for [Anonymous Symbol]
+    lab5grader.o(.text.TExaS_Init) refers to startup.o(.text) for DisableInterrupts
+    lab5grader.o(.text.TExaS_Init) refers to pll.o(i.PLL_Init) for PLL_Init
+    lab5grader.o(.text.TExaS_Init) refers to lab5grader.o(.bss.M) for M
+    lab5grader.o(.text.TExaS_Init) refers to lab5grader.o(.bss.Score) for Score
+    lab5grader.o(.text.TExaS_Init) refers to lab5grader.o(.bss.LastState) for LastState
+    lab5grader.o(.text.TExaS_Init) refers to lab5grader.o(.bss.WrongState) for WrongState
+    lab5grader.o(.text.TExaS_Init) refers to lab5grader.o(.bss.LookingFor) for LookingFor
+    lab5grader.o(.text.TExaS_Init) refers to lab5grader.o(.bss.LookingFlag) for LookingFlag
+    lab5grader.o(.text.TExaS_Init) refers to lab5grader.o(.bss.LastOut) for LastOut
+    lab5grader.o(.text.TExaS_Init) refers to lab5grader.o(.rodata.str1.1) for .L.str.17
+    lab5grader.o(.text.TExaS_Init) refers to lab5.o(.data.EID1) for EID1
+    lab5grader.o(.text.TExaS_Init) refers to memcmp.o(.text) for memcmp
+    lab5grader.o(.text.TExaS_Init) refers to lab5.o(.data.EID2) for EID2
+    lab5grader.o(.text.TExaS_Init) refers to lab5grader.o(.data.PortMode) for PortMode
+    lab5grader.o(.text.TExaS_Init) refers to lab5grader.o(.bss.PatternMode) for PatternMode
+    lab5grader.o(.text.TExaS_Init) refers to lab5grader.o(.rodata.PortProblem) for PortProblem
+    lab5grader.o(.text.TExaS_Init) refers to lab5grader.o(.rodata.PatternProblem) for PatternProblem
+    lab5grader.o(.text.TExaS_Init) refers to lab5grader.o(.bss.PeriodicTask2) for PeriodicTask2
+    lab5grader.o(.text.TExaS_Init) refers to lab5grader.o(.text.Scope) for Scope
+    lab5grader.o(.text.TExaS_Init) refers to lab5grader.o(.text.LogicAnalyzerA) for LogicAnalyzerA
+    lab5grader.o(.text.TExaS_Init) refers to lab5grader.o(.text.LogicAnalyzerB) for LogicAnalyzerB
+    lab5grader.o(.text.TExaS_Init) refers to lab5grader.o(.text.LogicAnalyzerC) for LogicAnalyzerC
+    lab5grader.o(.text.TExaS_Init) refers to lab5grader.o(.text.LogicAnalyzerE) for LogicAnalyzerE
+    lab5grader.o(.text.TExaS_Init) refers to uart.o(.text) for UART_Init
+    lab5grader.o(.text.TExaS_Init) refers to lab5grader.o(.text.Lab5Grader) for Lab5Grader
+    lab5grader.o(.text.TExaS_Init) refers to timer3a.o(i.Timer3A_Init) for Timer3A_Init
+    lab5grader.o(.text.TExaS_Init) refers to lab5grader.o(.bss.Time) for Time
+    lab5grader.o(.ARM.exidx.text.TExaS_Init) refers to lab5grader.o(.text.TExaS_Init) for [Anonymous Symbol]
+    lab5grader.o(.ARM.exidx.text.TExaS_Stop) refers to lab5grader.o(.text.TExaS_Stop) for [Anonymous Symbol]
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$0000000F) for __rt_final_exit
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry8b.o(.ARM.Collect$$$$0000000A) for _main_cpp_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry9a.o(.ARM.Collect$$$$0000000B) for _main_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry2.o(.ARM.Collect$$$$00000001) for _main_stk
+    entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
+    entry2.o(.ARM.Collect$$$$00002712) refers to startup.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to startup.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
+    entry9a.o(.ARM.Collect$$$$0000000B) refers to lab5.o(.text.main) for main
+    entry9b.o(.ARM.Collect$$$$0000000C) refers to lab5.o(.text.main) for main
+    init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing startup.o(HEAP), (0 bytes).
+    Removing lab5.o(.text), (0 bytes).
+    Removing lab5.o(.text.PortE_Init), (42 bytes).
+    Removing lab5.o(.ARM.exidx.text.PortE_Init), (8 bytes).
+    Removing lab5.o(.text.PortF_Init), (22 bytes).
+    Removing lab5.o(.ARM.exidx.text.PortF_Init), (8 bytes).
+    Removing lab5.o(.text.PortA_Init), (22 bytes).
+    Removing lab5.o(.ARM.exidx.text.PortA_Init), (8 bytes).
+    Removing lab5.o(.ARM.exidx.text.main), (8 bytes).
+    Removing lab5.o(.ARM.use_no_argv), (4 bytes).
+    Removing lab5grader.o(.text), (0 bytes).
+    Removing lab5grader.o(.ARM.exidx.text.Scope), (8 bytes).
+    Removing lab5grader.o(.ARM.exidx.text.LogicAnalyzerA), (8 bytes).
+    Removing lab5grader.o(.ARM.exidx.text.LogicAnalyzerB), (8 bytes).
+    Removing lab5grader.o(.ARM.exidx.text.LogicAnalyzerC), (8 bytes).
+    Removing lab5grader.o(.ARM.exidx.text.LogicAnalyzerE), (8 bytes).
+    Removing lab5grader.o(.text.PeriodicTask2_Init), (184 bytes).
+    Removing lab5grader.o(.ARM.exidx.text.PeriodicTask2_Init), (8 bytes).
+    Removing lab5grader.o(.ARM.exidx.text.Timer5A_Handler), (8 bytes).
+    Removing lab5grader.o(.text.PeriodicTask2_Stop), (44 bytes).
+    Removing lab5grader.o(.ARM.exidx.text.PeriodicTask2_Stop), (8 bytes).
+    Removing lab5grader.o(.text.UART0_Init), (122 bytes).
+    Removing lab5grader.o(.ARM.exidx.text.UART0_Init), (8 bytes).
+    Removing lab5grader.o(.text.UART0_InChar), (20 bytes).
+    Removing lab5grader.o(.ARM.exidx.text.UART0_InChar), (8 bytes).
+    Removing lab5grader.o(.text.UART0_OutChar), (18 bytes).
+    Removing lab5grader.o(.ARM.exidx.text.UART0_OutChar), (8 bytes).
+    Removing lab5grader.o(.text.UART0_OutString), (34 bytes).
+    Removing lab5grader.o(.ARM.exidx.text.UART0_OutString), (8 bytes).
+    Removing lab5grader.o(.text.OutCRLF0), (32 bytes).
+    Removing lab5grader.o(.ARM.exidx.text.OutCRLF0), (8 bytes).
+    Removing lab5grader.o(.text.ADC1_Init), (170 bytes).
+    Removing lab5grader.o(.ARM.exidx.text.ADC1_Init), (8 bytes).
+    Removing lab5grader.o(.text.OutPortProblem), (80 bytes).
+    Removing lab5grader.o(.ARM.exidx.text.OutPortProblem), (8 bytes).
+    Removing lab5grader.o(.text.CheckClock), (60 bytes).
+    Removing lab5grader.o(.ARM.exidx.text.CheckClock), (8 bytes).
+    Removing lab5grader.o(.ARM.exidx.text.CheckInitialization), (8 bytes).
+    Removing lab5grader.o(.text.ReadInput), (84 bytes).
+    Removing lab5grader.o(.ARM.exidx.text.ReadInput), (8 bytes).
+    Removing lab5grader.o(.text.ReadOutput), (98 bytes).
+    Removing lab5grader.o(.ARM.exidx.text.ReadOutput), (8 bytes).
+    Removing lab5grader.o(.text.GetState), (106 bytes).
+    Removing lab5grader.o(.ARM.exidx.text.GetState), (8 bytes).
+    Removing lab5grader.o(.text.Random32), (34 bytes).
+    Removing lab5grader.o(.ARM.exidx.text.Random32), (8 bytes).
+    Removing lab5grader.o(.text.Random6), (36 bytes).
+    Removing lab5grader.o(.ARM.exidx.text.Random6), (8 bytes).
+    Removing lab5grader.o(.text.Random), (46 bytes).
+    Removing lab5grader.o(.ARM.exidx.text.Random), (8 bytes).
+    Removing lab5grader.o(.text.setUpper), (16 bytes).
+    Removing lab5grader.o(.ARM.exidx.text.setUpper), (8 bytes).
+    Removing lab5grader.o(.text.OutCRLF), (18 bytes).
+    Removing lab5grader.o(.ARM.exidx.text.OutCRLF), (8 bytes).
+    Removing lab5grader.o(.ARM.exidx.text.Lab5Grader), (8 bytes).
+    Removing lab5grader.o(.ARM.exidx.text.TExaS_Init), (8 bytes).
+    Removing lab5grader.o(.text.TExaS_Stop), (44 bytes).
+    Removing lab5grader.o(.ARM.exidx.text.TExaS_Stop), (8 bytes).
+    Removing lab5grader.o(.bss.M6), (4 bytes).
+
+59 unused section(s) (total 1596 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    ../clib/microlib/string/memcmp.c         0x00000000   Number         0  memcmp.o ABSOLUTE
+    Lab5.c                                   0x00000000   Number         0  lab5.o ABSOLUTE
+    Lab5grader.c                             0x00000000   Number         0  lab5grader.o ABSOLUTE
+    PLL.c                                    0x00000000   Number         0  pll.o ABSOLUTE
+    Timer3A.c                                0x00000000   Number         0  timer3a.o ABSOLUTE
+    UART.c                                   0x00000000   Number         0  uart.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    delay.s                                  0x00000000   Number         0  delay.o ABSOLUTE
+    handlers.s                               0x00000000   Number         0  handlers.o ABSOLUTE
+    init.s                                   0x00000000   Number         0  init.o ABSOLUTE
+    startup.s                                0x00000000   Number         0  startup.o ABSOLUTE
+    RESET                                    0x00000000   Section      644  startup.o(RESET)
+    .ARM.Collect$$$$00000000                 0x00000284   Section        0  entry.o(.ARM.Collect$$$$00000000)
+    .ARM.Collect$$$$00000001                 0x00000284   Section        4  entry2.o(.ARM.Collect$$$$00000001)
+    .ARM.Collect$$$$00000004                 0x00000288   Section        4  entry5.o(.ARM.Collect$$$$00000004)
+    .ARM.Collect$$$$00000008                 0x0000028c   Section        0  entry7b.o(.ARM.Collect$$$$00000008)
+    .ARM.Collect$$$$0000000A                 0x0000028c   Section        0  entry8b.o(.ARM.Collect$$$$0000000A)
+    .ARM.Collect$$$$0000000B                 0x0000028c   Section        8  entry9a.o(.ARM.Collect$$$$0000000B)
+    __lit__00000000                          0x00000294   Data           4  entry2.o(.ARM.Collect$$$$00002712)
+    .ARM.Collect$$$$0000000D                 0x00000294   Section        0  entry10a.o(.ARM.Collect$$$$0000000D)
+    .ARM.Collect$$$$0000000F                 0x00000294   Section        0  entry11a.o(.ARM.Collect$$$$0000000F)
+    .ARM.Collect$$$$00002712                 0x00000294   Section        4  entry2.o(.ARM.Collect$$$$00002712)
+    .text                                    0x00000298   Section       28  startup.o(.text)
+    .text                                    0x000002b8   Section       28  delay.o(.text)
+    .text                                    0x000002d4   Section        0  uart.o(.text)
+    copyHardwareToSoftware                   0x0000048f   Thumb Code    36  uart.o(.text)
+    copySoftwareToHardware                   0x000004b3   Thumb Code    38  uart.o(.text)
+    .text                                    0x0000070e   Section        0  memcmp.o(.text)
+    .text                                    0x00000728   Section       36  init.o(.text)
+    [Anonymous Symbol]                       0x0000074c   Section        0  lab5grader.o(.text.CheckInitialization)
+    [Anonymous Symbol]                       0x000008a8   Section        0  lab5grader.o(.text.Lab5Grader)
+    [Anonymous Symbol]                       0x00000cd4   Section        0  lab5grader.o(.text.LogicAnalyzerA)
+    [Anonymous Symbol]                       0x00000cf0   Section        0  lab5grader.o(.text.LogicAnalyzerB)
+    [Anonymous Symbol]                       0x00000d0c   Section        0  lab5grader.o(.text.LogicAnalyzerC)
+    [Anonymous Symbol]                       0x00000d28   Section        0  lab5grader.o(.text.LogicAnalyzerE)
+    [Anonymous Symbol]                       0x00000d44   Section        0  lab5grader.o(.text.Scope)
+    [Anonymous Symbol]                       0x00000d5c   Section        0  lab5grader.o(.text.TExaS_Init)
+    [Anonymous Symbol]                       0x000012e0   Section        0  lab5grader.o(.text.Timer5A_Handler)
+    [Anonymous Symbol]                       0x000012f8   Section        0  lab5.o(.text.main)
+    i.PLL_Init                               0x000013b4   Section        0  pll.o(i.PLL_Init)
+    i.Timer3A_Handler                        0x00001430   Section        0  timer3a.o(i.Timer3A_Handler)
+    i.Timer3A_Init                           0x00001448   Section        0  timer3a.o(i.Timer3A_Init)
+    i.Timer3A_Stop                           0x000014a8   Section        0  timer3a.o(i.Timer3A_Stop)
+    i.__scatterload_copy                     0x000014c0   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x000014ce   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x000014d0   Section       14  handlers.o(i.__scatterload_zeroinit)
+    .L.str.5                                 0x00001d74   Data          34  lab5grader.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x00001d74   Section        0  lab5grader.o(.rodata.str1.1)
+    .L.str.6                                 0x00001d96   Data          34  lab5grader.o(.rodata.str1.1)
+    .L.str.7                                 0x00001db8   Data          16  lab5grader.o(.rodata.str1.1)
+    .L.str.21                                0x00001dc8   Data          44  lab5grader.o(.rodata.str1.1)
+    .L.str.1                                 0x00001df4   Data          26  lab5grader.o(.rodata.str1.1)
+    .L.str.4                                 0x00001e0e   Data          50  lab5grader.o(.rodata.str1.1)
+    .L.str.8                                 0x00001e40   Data          17  lab5grader.o(.rodata.str1.1)
+    .L.str.17                                0x00001e51   Data          19  lab5grader.o(.rodata.str1.1)
+    .L.str.18                                0x00001e64   Data           7  lab5grader.o(.rodata.str1.1)
+    .L.str.19                                0x00001e6b   Data           6  lab5grader.o(.rodata.str1.1)
+    .L.str.20                                0x00001e71   Data           8  lab5grader.o(.rodata.str1.1)
+    .data                                    0x20000000   Section       16  uart.o(.data)
+    .data                                    0x20000010   Section        4  timer3a.o(.data)
+    PortMode                                 0x20000028   Data           4  lab5grader.o(.data.PortMode)
+    [Anonymous Symbol]                       0x20000028   Section        0  lab5grader.o(.data.PortMode)
+    RxFifo                                   0x20000030   Data          64  uart.o(.bss)
+    .bss                                     0x20000030   Section      128  uart.o(.bss)
+    TxFifo                                   0x20000070   Data          64  uart.o(.bss)
+    Fail                                     0x200000b0   Data           1  lab5grader.o(.bss.Fail)
+    [Anonymous Symbol]                       0x200000b0   Section        0  lab5grader.o(.bss.Fail)
+    PatternMode                              0x200000d4   Data           4  lab5grader.o(.bss.PatternMode)
+    [Anonymous Symbol]                       0x200000d4   Section        0  lab5grader.o(.bss.PatternMode)
+    Score                                    0x200000dc   Data           4  lab5grader.o(.bss.Score)
+    [Anonymous Symbol]                       0x200000dc   Section        0  lab5grader.o(.bss.Score)
+    Time                                     0x200000e0   Data           4  lab5grader.o(.bss.Time)
+    [Anonymous Symbol]                       0x200000e0   Section        0  lab5grader.o(.bss.Time)
+    StackMem                                 0x200000f0   Data           0  startup.o(STACK)
+    STACK                                    0x200000f0   Section     1024  startup.o(STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv4$E$P$D$K$B$S$7EM$PE$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$~IW$USESV6$~STKCKD$USESV7$~SHL$OTIME$EBA8$MICROLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __Vectors                                0x00000000   Data           0  startup.o(RESET)
+    __cpp_initialize__aeabi_                  - Undefined Weak Reference
+    __cxa_finalize                            - Undefined Weak Reference
+    __decompress                              - Undefined Weak Reference
+    _clock_init                               - Undefined Weak Reference
+    _microlib_exit                            - Undefined Weak Reference
+    Reset_Handler                            0x0000026d   Thumb Code     0  startup.o(RESET)
+    NMI_Handler                              0x00000271   Thumb Code     2  startup.o(RESET)
+    HardFault_Handler                        0x00000273   Thumb Code     2  startup.o(RESET)
+    MemManage_Handler                        0x00000275   Thumb Code     2  startup.o(RESET)
+    BusFault_Handler                         0x00000277   Thumb Code     2  startup.o(RESET)
+    UsageFault_Handler                       0x00000279   Thumb Code     2  startup.o(RESET)
+    SVC_Handler                              0x0000027b   Thumb Code     2  startup.o(RESET)
+    DebugMon_Handler                         0x0000027d   Thumb Code     2  startup.o(RESET)
+    PendSV_Handler                           0x0000027f   Thumb Code     2  startup.o(RESET)
+    SysTick_Handler                          0x00000281   Thumb Code     2  startup.o(RESET)
+    ADC0Seq0_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    ADC0Seq1_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    ADC0Seq2_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    ADC0Seq3_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    ADC1Seq0_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    ADC1Seq1_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    ADC1Seq2_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    ADC1Seq3_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    CAN0_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    CAN1_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    CAN2_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    Comp0_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    Comp1_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    Comp2_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    Ethernet_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    ExtBus_Handler                           0x00000283   Thumb Code     0  startup.o(RESET)
+    FPU_Handler                              0x00000283   Thumb Code     0  startup.o(RESET)
+    Fan0_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    FlashCtl_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortA_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortB_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortC_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortD_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortE_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortF_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortG_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortH_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortJ_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortK_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortL_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortM_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortN_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortP1_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortP2_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortP3_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortP4_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortP5_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortP6_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortP7_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortP_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ1_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ2_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ3_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ4_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ5_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ6_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ7_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortR_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortS_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    Hibernate_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    I2C0_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    I2C1_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    I2C2_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    I2C3_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    I2C4_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    I2C5_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    I2S0_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    LPC0_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    PECI0_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM0Fault_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM0Generator0_Handler                   0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM0Generator1_Handler                   0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM0Generator2_Handler                   0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM0Generator3_Handler                   0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM1Fault_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM1Generator0_Handler                   0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM1Generator1_Handler                   0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM1Generator2_Handler                   0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM1Generator3_Handler                   0x00000283   Thumb Code     0  startup.o(RESET)
+    Quadrature0_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    Quadrature1_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    Quadrature2_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    SSI0_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    SSI1_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    SSI2_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    SSI3_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    SysCtl_Handler                           0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer0A_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer0B_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer1A_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer1B_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer2A_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer2B_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer3B_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer4A_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer4B_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer5B_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    UART1_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    UART2_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    UART3_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    UART4_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    UART5_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    UART6_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    UART7_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    USB0_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    WDT_Handler                              0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer0A_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer0B_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer1A_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer1B_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer2A_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer2B_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer3A_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer3B_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer4A_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer4B_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer5A_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer5B_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    uDMA_Error                               0x00000283   Thumb Code     0  startup.o(RESET)
+    uDMA_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    __main                                   0x00000285   Thumb Code     0  entry.o(.ARM.Collect$$$$00000000)
+    _main_stk                                0x00000285   Thumb Code     0  entry2.o(.ARM.Collect$$$$00000001)
+    _main_scatterload                        0x00000289   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    __main_after_scatterload                 0x0000028d   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    _main_clock                              0x0000028d   Thumb Code     0  entry7b.o(.ARM.Collect$$$$00000008)
+    _main_cpp_init                           0x0000028d   Thumb Code     0  entry8b.o(.ARM.Collect$$$$0000000A)
+    _main_init                               0x0000028d   Thumb Code     0  entry9a.o(.ARM.Collect$$$$0000000B)
+    __rt_final_cpp                           0x00000295   Thumb Code     0  entry10a.o(.ARM.Collect$$$$0000000D)
+    __rt_final_exit                          0x00000295   Thumb Code     0  entry11a.o(.ARM.Collect$$$$0000000F)
+    DisableInterrupts                        0x00000299   Thumb Code     0  startup.o(.text)
+    EnableInterrupts                         0x0000029d   Thumb Code     0  startup.o(.text)
+    StartCritical                            0x000002a1   Thumb Code     0  startup.o(.text)
+    EndCritical                              0x000002a9   Thumb Code     0  startup.o(.text)
+    WaitForInterrupt                         0x000002af   Thumb Code     0  startup.o(.text)
+    Delay                                    0x000002b9   Thumb Code     2  delay.o(.text)
+    Wait10ms                                 0x000002c7   Thumb Code     0  delay.o(.text)
+    RxFifo_Init                              0x000002d5   Thumb Code    26  uart.o(.text)
+    RxFifo_Put                               0x000002ef   Thumb Code    48  uart.o(.text)
+    RxFifo_Get                               0x0000031f   Thumb Code    46  uart.o(.text)
+    RxFifo_Size                              0x0000034d   Thumb Code    14  uart.o(.text)
+    TxFifo_Init                              0x0000035b   Thumb Code    26  uart.o(.text)
+    TxFifo_Put                               0x00000375   Thumb Code    48  uart.o(.text)
+    TxFifo_Get                               0x000003a5   Thumb Code    46  uart.o(.text)
+    TxFifo_Size                              0x000003d3   Thumb Code    14  uart.o(.text)
+    UART_Init                                0x000003e1   Thumb Code   174  uart.o(.text)
+    UART_InChar                              0x000004d9   Thumb Code    20  uart.o(.text)
+    UART_OutChar                             0x000004ed   Thumb Code    46  uart.o(.text)
+    UART0_Handler                            0x0000051b   Thumb Code    82  uart.o(.text)
+    UART_OutString                           0x0000056d   Thumb Code    22  uart.o(.text)
+    UART_InUDec                              0x00000583   Thumb Code    76  uart.o(.text)
+    UART_OutUDec                             0x000005cf   Thumb Code    42  uart.o(.text)
+    UART_InUHex                              0x000005f9   Thumb Code   108  uart.o(.text)
+    UART_OutUHex                             0x00000665   Thumb Code    52  uart.o(.text)
+    UART_InString                            0x00000699   Thumb Code   118  uart.o(.text)
+    memcmp                                   0x0000070f   Thumb Code    26  memcmp.o(.text)
+    __scatterload                            0x00000729   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x00000729   Thumb Code     0  init.o(.text)
+    CheckInitialization                      0x0000074d   Thumb Code   220  lab5grader.o(.text.CheckInitialization)
+    Lab5Grader                               0x000008a9   Thumb Code   960  lab5grader.o(.text.Lab5Grader)
+    LogicAnalyzerA                           0x00000cd5   Thumb Code    28  lab5grader.o(.text.LogicAnalyzerA)
+    LogicAnalyzerB                           0x00000cf1   Thumb Code    26  lab5grader.o(.text.LogicAnalyzerB)
+    LogicAnalyzerC                           0x00000d0d   Thumb Code    28  lab5grader.o(.text.LogicAnalyzerC)
+    LogicAnalyzerE                           0x00000d29   Thumb Code    26  lab5grader.o(.text.LogicAnalyzerE)
+    Scope                                    0x00000d45   Thumb Code    24  lab5grader.o(.text.Scope)
+    TExaS_Init                               0x00000d5d   Thumb Code  1380  lab5grader.o(.text.TExaS_Init)
+    Timer5A_Handler                          0x000012e1   Thumb Code    24  lab5grader.o(.text.Timer5A_Handler)
+    main                                     0x000012f9   Thumb Code   188  lab5.o(.text.main)
+    PLL_Init                                 0x000013b5   Thumb Code   120  pll.o(i.PLL_Init)
+    Timer3A_Handler                          0x00001431   Thumb Code    16  timer3a.o(i.Timer3A_Handler)
+    Timer3A_Init                             0x00001449   Thumb Code    74  timer3a.o(i.Timer3A_Init)
+    Timer3A_Stop                             0x000014a9   Thumb Code    14  timer3a.o(i.Timer3A_Stop)
+    __scatterload_copy                       0x000014c1   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x000014cf   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x000014d1   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    FSM                                      0x000014e0   Data         880  lab5.o(.rodata.FSM)
+    PatternProblem                           0x00001850   Data         200  lab5grader.o(.rodata.PatternProblem)
+    Patterns                                 0x00001918   Data          24  lab5grader.o(.rodata.Patterns)
+    PortProblem                              0x00001930   Data         640  lab5grader.o(.rodata.PortProblem)
+    pat                                      0x00001bb0   Data         196  lab5grader.o(.rodata.pat)
+    ports                                    0x00001c74   Data         256  lab5grader.o(.rodata.ports)
+    validPatterns                            0x00001e7c   Data          28  lab5grader.o(.rodata.validPatterns)
+    Region$$Table$$Base                      0x00001e98   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00001eb8   Number         0  anon$$obj.o(Region$$Table)
+    RxPutI                                   0x20000000   Data           4  uart.o(.data)
+    RxGetI                                   0x20000004   Data           4  uart.o(.data)
+    TxPutI                                   0x20000008   Data           4  uart.o(.data)
+    TxGetI                                   0x2000000c   Data           4  uart.o(.data)
+    PeriodicTask3                            0x20000010   Data           4  timer3a.o(.data)
+    EID1                                     0x20000014   Data           9  lab5.o(.data.EID1)
+    EID2                                     0x2000001d   Data           8  lab5.o(.data.EID2)
+    Input                                    0x200000b4   Data           4  lab5.o(.bss.Input)
+    LastIn                                   0x200000b8   Data           4  lab5grader.o(.bss.LastIn)
+    LastOut                                  0x200000bc   Data           4  lab5grader.o(.bss.LastOut)
+    LastState                                0x200000c0   Data           4  lab5grader.o(.bss.LastState)
+    LookingFlag                              0x200000c4   Data           4  lab5grader.o(.bss.LookingFlag)
+    LookingFor                               0x200000c8   Data           4  lab5grader.o(.bss.LookingFor)
+    M                                        0x200000cc   Data           4  lab5grader.o(.bss.M)
+    NeedState                                0x200000d0   Data           4  lab5grader.o(.bss.NeedState)
+    PeriodicTask2                            0x200000d8   Data           4  lab5grader.o(.bss.PeriodicTask2)
+    WrongState                               0x200000e4   Data           4  lab5grader.o(.bss.WrongState)
+    currentState                             0x200000e8   Data           4  lab5.o(.bss.currentState)
+    __initial_sp                             0x200004f0   Data           0  startup.o(STACK)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x0000026d
+
+  Load Region LR_1 (Base: 0x00000000, Size: 0x00001ee4, Max: 0xffffffff, ABSOLUTE)
+
+    Execution Region ER_RO (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00001eb8, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000000   0x00000000   0x00000284   Code   RO            3  * RESET               startup.o
+    0x00000284   0x00000284   0x00000000   Code   RO          196  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x00000284   0x00000284   0x00000004   Code   RO          201    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x00000288   0x00000288   0x00000004   Code   RO          204    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x0000028c   0x0000028c   0x00000000   Code   RO          206    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x0000028c   0x0000028c   0x00000000   Code   RO          208    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x0000028c   0x0000028c   0x00000008   Code   RO          209    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x00000294   0x00000294   0x00000000   Code   RO          211    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x00000294   0x00000294   0x00000000   Code   RO          213    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x00000294   0x00000294   0x00000004   Code   RO          202    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x00000298   0x00000298   0x0000001c   Code   RO            4    .text               startup.o
+    0x000002b4   0x000002b4   0x00000004   PAD
+    0x000002b8   0x000002b8   0x0000001c   Code   RO           33    .text               delay.o
+    0x000002d4   0x000002d4   0x0000043a   Code   RO           58    .text               uart.o
+    0x0000070e   0x0000070e   0x0000001a   Code   RO          199    .text               mc_w.l(memcmp.o)
+    0x00000728   0x00000728   0x00000024   Code   RO          215    .text               mc_w.l(init.o)
+    0x0000074c   0x0000074c   0x0000015c   Code   RO          143    .text.CheckInitialization  lab5grader.o
+    0x000008a8   0x000008a8   0x0000042c   Code   RO          161    .text.Lab5Grader    lab5grader.o
+    0x00000cd4   0x00000cd4   0x0000001c   Code   RO          113    .text.LogicAnalyzerA  lab5grader.o
+    0x00000cf0   0x00000cf0   0x0000001a   Code   RO          115    .text.LogicAnalyzerB  lab5grader.o
+    0x00000d0a   0x00000d0a   0x00000002   PAD
+    0x00000d0c   0x00000d0c   0x0000001c   Code   RO          117    .text.LogicAnalyzerC  lab5grader.o
+    0x00000d28   0x00000d28   0x0000001a   Code   RO          119    .text.LogicAnalyzerE  lab5grader.o
+    0x00000d42   0x00000d42   0x00000002   PAD
+    0x00000d44   0x00000d44   0x00000018   Code   RO          111    .text.Scope         lab5grader.o
+    0x00000d5c   0x00000d5c   0x00000584   Code   RO          163    .text.TExaS_Init    lab5grader.o
+    0x000012e0   0x000012e0   0x00000018   Code   RO          123    .text.Timer5A_Handler  lab5grader.o
+    0x000012f8   0x000012f8   0x000000bc   Code   RO           19    .text.main          lab5.o
+    0x000013b4   0x000013b4   0x0000007c   Code   RO           36    i.PLL_Init          pll.o
+    0x00001430   0x00001430   0x00000018   Code   RO           83    i.Timer3A_Handler   timer3a.o
+    0x00001448   0x00001448   0x00000060   Code   RO           84    i.Timer3A_Init      timer3a.o
+    0x000014a8   0x000014a8   0x00000018   Code   RO           85    i.Timer3A_Stop      timer3a.o
+    0x000014c0   0x000014c0   0x0000000e   Code   RO          219    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x000014ce   0x000014ce   0x00000002   Code   RO          220    i.__scatterload_null  mc_w.l(handlers.o)
+    0x000014d0   0x000014d0   0x0000000e   Code   RO          221    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x000014de   0x000014de   0x00000002   PAD
+    0x000014e0   0x000014e0   0x00000370   Data   RO           23    .rodata.FSM         lab5.o
+    0x00001850   0x00001850   0x000000c8   Data   RO          172    .rodata.PatternProblem  lab5grader.o
+    0x00001918   0x00001918   0x00000018   Data   RO          173    .rodata.Patterns    lab5grader.o
+    0x00001930   0x00001930   0x00000280   Data   RO          169    .rodata.PortProblem  lab5grader.o
+    0x00001bb0   0x00001bb0   0x000000c4   Data   RO          174    .rodata.pat         lab5grader.o
+    0x00001c74   0x00001c74   0x00000100   Data   RO          168    .rodata.ports       lab5grader.o
+    0x00001d74   0x00001d74   0x00000105   Data   RO          176    .rodata.str1.1      lab5grader.o
+    0x00001e79   0x00001e79   0x00000003   PAD
+    0x00001e7c   0x00001e7c   0x0000001c   Data   RO          171    .rodata.validPatterns  lab5grader.o
+    0x00001e98   0x00001e98   0x00000020   Data   RO          218    Region$$Table       anon$$obj.o
+
+
+    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x00001eb8, Size: 0x0000002c, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000000   0x00001eb8   0x00000010   Data   RW           60    .data               uart.o
+    0x20000010   0x00001ec8   0x00000004   Data   RW           86    .data               timer3a.o
+    0x20000014   0x00001ecc   0x00000009   Data   RW           21    .data.EID1          lab5.o
+    0x2000001d   0x00001ed5   0x00000008   Data   RW           22    .data.EID2          lab5.o
+    0x20000025   0x00001edd   0x00000003   PAD
+    0x20000028   0x00001ee0   0x00000004   Data   RW          170    .data.PortMode      lab5grader.o
+
+
+    Execution Region ER_ZI (Exec base: 0x20000030, Load base: 0x00001ee4, Size: 0x000004c0, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000030        -       0x00000080   Zero   RW           59    .bss                uart.o
+    0x200000b0        -       0x00000001   Zero   RW          175    .bss.Fail           lab5grader.o
+    0x200000b1   0x00001ee4   0x00000003   PAD
+    0x200000b4        -       0x00000004   Zero   RW           25    .bss.Input          lab5.o
+    0x200000b8        -       0x00000004   Zero   RW          181    .bss.LastIn         lab5grader.o
+    0x200000bc        -       0x00000004   Zero   RW          182    .bss.LastOut        lab5grader.o
+    0x200000c0        -       0x00000004   Zero   RW          188    .bss.LastState      lab5grader.o
+    0x200000c4        -       0x00000004   Zero   RW          183    .bss.LookingFlag    lab5grader.o
+    0x200000c8        -       0x00000004   Zero   RW          185    .bss.LookingFor     lab5grader.o
+    0x200000cc        -       0x00000004   Zero   RW          178    .bss.M              lab5grader.o
+    0x200000d0        -       0x00000004   Zero   RW          186    .bss.NeedState      lab5grader.o
+    0x200000d4        -       0x00000004   Zero   RW          184    .bss.PatternMode    lab5grader.o
+    0x200000d8        -       0x00000004   Zero   RW          167    .bss.PeriodicTask2  lab5grader.o
+    0x200000dc        -       0x00000004   Zero   RW          177    .bss.Score          lab5grader.o
+    0x200000e0        -       0x00000004   Zero   RW          180    .bss.Time           lab5grader.o
+    0x200000e4        -       0x00000004   Zero   RW          187    .bss.WrongState     lab5grader.o
+    0x200000e8        -       0x00000004   Zero   RW           24    .bss.currentState   lab5.o
+    0x200000ec   0x00001ee4   0x00000004   PAD
+    0x200000f0        -       0x00000400   Zero   RW            1    STACK               startup.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+        28          0          0          0          0        212   delay.o
+       188          0        880         17          8       1772   lab5.o
+      2984        274       1605          4         49      12482   lab5grader.o
+       124          4          0          0          0       4975   pll.o
+       672        622          0          0       1024        940   startup.o
+       144         40          0          4          0       1976   timer3a.o
+      1082         48          0         16        128       5424   uart.o
+
+    ----------------------------------------------------------------------
+      5230        992       2520         44       1216      27781   Object Totals
+         0          0         32          0          0          0   (incl. Generated)
+         8          4          3          3          7          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+         0          0          0          0          0          0   entry.o
+         0          0          0          0          0          0   entry10a.o
+         0          0          0          0          0          0   entry11a.o
+         8          4          0          0          0          0   entry2.o
+         4          0          0          0          0          0   entry5.o
+         0          0          0          0          0          0   entry7b.o
+         0          0          0          0          0          0   entry8b.o
+         8          4          0          0          0          0   entry9a.o
+        30          0          0          0          0          0   handlers.o
+        36          8          0          0          0         68   init.o
+        26          0          0          0          0         80   memcmp.o
+
+    ----------------------------------------------------------------------
+       114         16          0          0          0        148   Library Totals
+         2          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+       112         16          0          0          0        148   mc_w.l
+
+    ----------------------------------------------------------------------
+       114         16          0          0          0        148   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+      5344       1008       2520         44       1216      27853   Grand Totals
+      5344       1008       2520         44       1216      27853   ELF Image Totals
+      5344       1008       2520         44          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                 7864 (   7.68kB)
+    Total RW  Size (RW Data + ZI Data)              1260 (   1.23kB)
+    Total ROM Size (Code + RO Data + RW Data)       7908 (   7.72kB)
+
+==============================================================================
+
